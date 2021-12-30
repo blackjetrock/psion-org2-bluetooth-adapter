@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 3
 Title ""
 Date ""
 Rev ""
@@ -638,25 +638,15 @@ Text GLabel 1925 1475 2    50   Input ~ 0
 AC
 Text GLabel 1425 1375 0    50   Input ~ 0
 VB
-Text GLabel 8500 2625 0    50   Input ~ 0
-IO0
-Text GLabel 8500 2725 0    50   Input ~ 0
-IO1
-Text GLabel 9900 4125 2    50   Input ~ 0
-IO2
-Text GLabel 9900 4525 2    50   Input ~ 0
-IO3
 Text GLabel 9900 3925 2    50   Input ~ 0
 IP_CLK
 Text GLabel 9900 3725 2    50   Input ~ 0
 OP_CLK
-Text GLabel 9900 3525 2    50   Input ~ 0
-IO7
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0107
 U 1 1 61CED555
 P 2575 5025
-F 0 "#PWR?" H 2575 4775 50  0001 C CNN
+F 0 "#PWR0107" H 2575 4775 50  0001 C CNN
 F 1 "GND" H 2580 4852 50  0000 C CNN
 F 2 "" H 2575 5025 50  0001 C CNN
 F 3 "" H 2575 5025 50  0001 C CNN
@@ -664,10 +654,10 @@ F 3 "" H 2575 5025 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0108
 U 1 1 61CEDAFC
 P 3450 4725
-F 0 "#PWR?" H 3450 4475 50  0001 C CNN
+F 0 "#PWR0108" H 3450 4475 50  0001 C CNN
 F 1 "GND" H 3455 4552 50  0000 C CNN
 F 2 "" H 3450 4725 50  0001 C CNN
 F 3 "" H 3450 4725 50  0001 C CNN
@@ -675,10 +665,10 @@ F 3 "" H 3450 4725 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0113
 U 1 1 61CEDD65
 P 3675 7125
-F 0 "#PWR?" H 3675 6875 50  0001 C CNN
+F 0 "#PWR0113" H 3675 6875 50  0001 C CNN
 F 1 "GND" H 3680 6952 50  0000 C CNN
 F 2 "" H 3675 7125 50  0001 C CNN
 F 3 "" H 3675 7125 50  0001 C CNN
@@ -686,10 +676,10 @@ F 3 "" H 3675 7125 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0114
 U 1 1 61CEDF39
 P 6400 4025
-F 0 "#PWR?" H 6400 3775 50  0001 C CNN
+F 0 "#PWR0114" H 6400 3775 50  0001 C CNN
 F 1 "GND" H 6405 3852 50  0000 C CNN
 F 2 "" H 6400 4025 50  0001 C CNN
 F 3 "" H 6400 4025 50  0001 C CNN
@@ -697,10 +687,10 @@ F 3 "" H 6400 4025 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0115
 U 1 1 61CEE0B8
 P 9725 6150
-F 0 "#PWR?" H 9725 5900 50  0001 C CNN
+F 0 "#PWR0115" H 9725 5900 50  0001 C CNN
 F 1 "GND" H 9730 5977 50  0000 C CNN
 F 2 "" H 9725 6150 50  0001 C CNN
 F 3 "" H 9725 6150 50  0001 C CNN
@@ -732,4 +722,33 @@ Text GLabel 8500 3225 0    50   Input ~ 0
 PICO_RX
 Text Notes 8025 2050 0    50   ~ 0
 Pico USB could be used as USB \nserial if a connection is made to it.
+Text GLabel 9900 4125 2    50   Input ~ 0
+WROOM_ON
+$Comp
+L Device:D_Schottky D1
+U 1 1 61D1AB6B
+P 10725 2200
+F 0 "D1" V 10771 2121 50  0000 R CNN
+F 1 "D_Schottky" V 10680 2121 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-123" H 10725 2200 50  0001 C CNN
+F 3 "~" H 10725 2200 50  0001 C CNN
+	1    10725 2200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10725 2350 10725 2725
+Wire Wire Line
+	10725 2725 9900 2725
+Text GLabel 10525 1825 0    50   Input ~ 0
+VREG
+Wire Wire Line
+	10525 1825 10725 1825
+Wire Wire Line
+	10725 1825 10725 2050
+$Sheet
+S 4250 5025 1450 700 
+U 61D0535C
+F0 "Sheet61D0535B" 50
+F1 "Power.sch" 50
+$EndSheet
 $EndSCHEMATC
