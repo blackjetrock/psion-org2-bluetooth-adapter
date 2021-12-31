@@ -1,0 +1,7 @@
+Errata for Psion Organiser II Bluetooth Adapter
+===============================================
+
+1. Add a serial eeprom to store persistant info like BT IDs to connect to.
+   Flash is fine, but may wear out faster than eeprom and be less replaceable
+   (more of a problem really).
+   
