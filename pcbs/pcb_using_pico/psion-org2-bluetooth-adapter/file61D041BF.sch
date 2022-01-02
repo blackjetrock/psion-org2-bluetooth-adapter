@@ -4,9 +4,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 3
-Title ""
-Date ""
-Rev ""
+Title "Psion Organiser Bluetooth Adapter"
+Date "2022-01-01"
+Rev "1.1"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -37,7 +37,7 @@ P 6800 1850
 AR Path="/61D041C0/61D04600/61D1E6BC" Ref="R?"  Part="1" 
 AR Path="/61D041C0/61D1E6BC" Ref="R6"  Part="1" 
 F 0 "R6" H 6859 1896 50  0000 L CNN
-F 1 "R_Small" H 6859 1805 50  0000 L CNN
+F 1 "47k" H 6859 1805 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" H 6800 1850 50  0001 C CNN
 F 3 "~" H 6800 1850 50  0001 C CNN
 	1    6800 1850
@@ -191,7 +191,7 @@ L Device:R_Small R2
 U 1 1 61D4E017
 P 1950 1125
 F 0 "R2" H 2009 1171 50  0000 L CNN
-F 1 "R_Small" H 2009 1080 50  0000 L CNN
+F 1 "10k" H 2009 1080 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" H 1950 1125 50  0001 C CNN
 F 3 "~" H 1950 1125 50  0001 C CNN
 	1    1950 1125
@@ -219,7 +219,7 @@ L Device:R_Small R1
 U 1 1 61D504F1
 P 1525 2575
 F 0 "R1" H 1584 2621 50  0000 L CNN
-F 1 "R_Small" H 1584 2530 50  0000 L CNN
+F 1 "10k" H 1584 2530 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" H 1525 2575 50  0001 C CNN
 F 3 "~" H 1525 2575 50  0001 C CNN
 	1    1525 2575
