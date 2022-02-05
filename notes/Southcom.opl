@@ -1,0 +1,80 @@
+Southcom:
+ 
+LOCAL C$(6),AK$(6),DT$(57),HDF$(8),HDFC$(8) 
+LOCAL SDF$(8),SDFC$(8),Z12$(8),DD$(8),BC$(4),bcc$(4),F$(253),data$(60)
+LOCAL V$(9),HA$(9),sd$(9),sd,Vang,Hangle 
+LOCAL b%,b1%,b2%,i%,q%,s%,m%
+ 
+HDF$="Z44090"+CHR$(3) 
+HDFC$="Z42092"+CHR$(3) 
+SDF$="Z34093"+CHR$(3) 
+SDFC$="Z32091"+CHR$(3) 
+Z12$="Z12089"+CHR$(3) 
+C$="C067"+CHR$(3) 
+AK$=CHR$(6)+"006"+CHR$(3) 
+
+southcom:: 
+CLS :BEEP 250,250 
+PRINT "Press the [EXE] key" 
+m%=get 
+if m%=1 :stop :endif
+CLS :PRINT "Measuring...."
+onerr esc::
+LSET: (1200,2,7,1,0,0,-1,-1,-1,-1,-1,-1,-1,-1,2) 
+
+com:: 
+LPRINT SDFC$ 
+pause 6
+LPRINT C$ 
+
+F$=LINPUT$: (7)
+
+IF LEFT$(F$,5)<>AK$ :GOTO com:: :ENDIF 
+
+Data$=LINPUT$: (51) 
+
+LPRINT AK$ 
+dt$=left$(data$,45) :bc$=mid$(data$,46,3) :gosub bcc:: 
+if bc$<>bcc$ :goto daterr:: :endif 
+LSET: (9600,2,7,1,0,0,-1,-1,-1,-1,-1,-1,-1,-1,2) 
+ 
+ha$=mid$(dt$,20,7) :v$=mid$(dt$,12,7) :sd$=mid$(dt$,4,7) 
+ha$=left$(ha$,3)+"."+mid$(ha$,4,4) :v$=left$(v$,3)+"."+mid$(v$,4,4) 
+sd$=left$(sd$,4)+"."+mid$(sd$,5,3) 
+sd=val(sd$) :vang=val(v$) :Hangle=val(ha$) 
+ 
+cls :beep 200,100
+print "H angle :";Hangle 
+print "V angle :";vang 
+print "Distance :";sd 
+get :cls
+
+BEEP 100,100
+print "Len ack  :";len(f$)
+print "Len data :";len(data$)
+get 
+stop 
+ 
+BCC:: 
+B%=0 :I%=0                       
+  DO 
+I%=I%+1 
+Q%=ASC(MID$(dt$,I%,1)) 
+B1%=Q% AND (NOT B%) 
+B2%=B% AND (NOT Q%) 
+B%=B1% OR B2% 
+  UNTIL I%=LEN(dt$) 
+BCC$=GEN$(B%,10) 
+BCC$=RIGHT$("000"+BCC$,3) 
+RETSUB 
+daterr:: 
+cls 
+print "Comms error" 
+get
+stop
+
+esc::
+LPRINT AK$
+cls :print "*Escape"
+get
+goto southcom:: 

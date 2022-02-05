@@ -423,181 +423,181 @@ Connection ~ 9200 5300
 $Comp
 L Connector:Conn_01x04_Female J?
 U 1 1 61CE6219
-P 4900 2800
+P 4925 3250
 AR Path="/61CCCB6C/61CE6219" Ref="J?"  Part="1" 
 AR Path="/61CE6219" Ref="J5"  Part="1" 
-F 0 "J5" H 4792 3085 50  0000 C CNN
-F 1 "Conn_01x04_Female" H 4792 2994 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 4900 2800 50  0001 C CNN
-F 3 "~" H 4900 2800 50  0001 C CNN
-	1    4900 2800
+F 0 "J5" H 4817 3535 50  0000 C CNN
+F 1 "Conn_01x04_Female" H 4817 3444 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 4925 3250 50  0001 C CNN
+F 3 "~" H 4925 3250 50  0001 C CNN
+	1    4925 3250
 	-1   0    0    -1  
 $EndComp
 $Comp
 L Device:R_Small R?
 U 1 1 61CE621F
-P 5950 2250
+P 5975 2700
 AR Path="/61CCCB6C/61CE621F" Ref="R?"  Part="1" 
 AR Path="/61CE621F" Ref="R4"  Part="1" 
-F 0 "R4" H 6009 2296 50  0000 L CNN
-F 1 "4k7" H 6009 2205 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" H 5950 2250 50  0001 C CNN
-F 3 "~" H 5950 2250 50  0001 C CNN
-	1    5950 2250
+F 0 "R4" H 6034 2746 50  0000 L CNN
+F 1 "4k7" H 6034 2655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 5975 2700 50  0001 C CNN
+F 3 "~" H 5975 2700 50  0001 C CNN
+	1    5975 2700
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_Small R?
 U 1 1 61CE6225
-P 6425 2250
+P 6450 2700
 AR Path="/61CCCB6C/61CE6225" Ref="R?"  Part="1" 
 AR Path="/61CE6225" Ref="R5"  Part="1" 
-F 0 "R5" H 6484 2296 50  0000 L CNN
-F 1 "4k7" H 6484 2205 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" H 6425 2250 50  0001 C CNN
-F 3 "~" H 6425 2250 50  0001 C CNN
-	1    6425 2250
+F 0 "R5" H 6509 2746 50  0000 L CNN
+F 1 "4k7" H 6509 2655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 6450 2700 50  0001 C CNN
+F 3 "~" H 6450 2700 50  0001 C CNN
+	1    6450 2700
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3V3 #PWR?
 U 1 1 61CE622B
-P 5675 1950
+P 5700 2400
 AR Path="/61CCCB6C/61CE622B" Ref="#PWR?"  Part="1" 
 AR Path="/61CE622B" Ref="#PWR0111"  Part="1" 
-F 0 "#PWR0111" H 5675 1800 50  0001 C CNN
-F 1 "+3V3" H 5690 2123 50  0000 C CNN
-F 2 "" H 5675 1950 50  0001 C CNN
-F 3 "" H 5675 1950 50  0001 C CNN
-	1    5675 1950
+F 0 "#PWR0111" H 5700 2250 50  0001 C CNN
+F 1 "+3V3" H 5715 2573 50  0000 C CNN
+F 2 "" H 5700 2400 50  0001 C CNN
+F 3 "" H 5700 2400 50  0001 C CNN
+	1    5700 2400
 	1    0    0    -1  
 $EndComp
-Connection ~ 5950 2075
+Connection ~ 5975 2525
 Wire Wire Line
-	6425 2075 6425 2150
+	6450 2525 6450 2600
 Wire Wire Line
-	5950 2075 6425 2075
+	5975 2525 6450 2525
 Wire Wire Line
-	5950 2075 5950 2150
+	5975 2525 5975 2600
 Wire Wire Line
-	5675 2075 5950 2075
+	5700 2525 5975 2525
 Wire Wire Line
-	5675 1950 5675 2075
+	5700 2400 5700 2525
 Wire Wire Line
-	5100 2800 6425 2800
-Connection ~ 6425 2800
+	5125 3250 6450 3250
+Connection ~ 6450 3250
 Wire Wire Line
-	6825 2800 6425 2800
-Connection ~ 5950 2700
+	6850 3250 6450 3250
+Connection ~ 5975 3150
 Wire Wire Line
-	6825 2700 5950 2700
-Text GLabel 6825 2800 2    50   Input ~ 0
+	6850 3150 5975 3150
+Text GLabel 6850 3250 2    50   Input ~ 0
 I2C_SCLK
-Text GLabel 6825 2700 2    50   Input ~ 0
+Text GLabel 6850 3150 2    50   Input ~ 0
 I2C_SDA
 Wire Wire Line
-	6425 2350 6425 2800
+	6450 2800 6450 3250
 Wire Wire Line
-	5950 2700 5950 2350
+	5975 3150 5975 2800
 Wire Wire Line
-	5100 2700 5950 2700
+	5125 3150 5975 3150
 $Comp
 L Device:Jumper_NO_Small JP?
 U 1 1 61CE6247
-P 5825 3150
+P 5850 3600
 AR Path="/61CCCB6C/61CE6247" Ref="JP?"  Part="1" 
 AR Path="/61CE6247" Ref="JP3"  Part="1" 
-F 0 "JP3" H 5825 3335 50  0000 C CNN
-F 1 "Jumper_NO_Small" H 5825 3244 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5825 3150 50  0001 C CNN
-F 3 "~" H 5825 3150 50  0001 C CNN
-	1    5825 3150
+F 0 "JP3" H 5850 3785 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 5850 3694 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5850 3600 50  0001 C CNN
+F 3 "~" H 5850 3600 50  0001 C CNN
+	1    5850 3600
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:Jumper_NO_Small JP?
 U 1 1 61CE624D
-P 5825 3325
+P 5850 3775
 AR Path="/61CCCB6C/61CE624D" Ref="JP?"  Part="1" 
 AR Path="/61CE624D" Ref="JP4"  Part="1" 
-F 0 "JP4" H 5825 3510 50  0000 C CNN
-F 1 "Jumper_NO_Small" H 5825 3419 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5825 3325 50  0001 C CNN
-F 3 "~" H 5825 3325 50  0001 C CNN
-	1    5825 3325
+F 0 "JP4" H 5850 3960 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 5850 3869 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5850 3775 50  0001 C CNN
+F 3 "~" H 5850 3775 50  0001 C CNN
+	1    5850 3775
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:Jumper_NO_Small JP?
 U 1 1 61CE6253
-P 5800 3675
+P 5825 4125
 AR Path="/61CCCB6C/61CE6253" Ref="JP?"  Part="1" 
 AR Path="/61CE6253" Ref="JP1"  Part="1" 
-F 0 "JP1" H 5800 3860 50  0000 C CNN
-F 1 "Jumper_NO_Small" H 5800 3769 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5800 3675 50  0001 C CNN
-F 3 "~" H 5800 3675 50  0001 C CNN
-	1    5800 3675
+F 0 "JP1" H 5825 4310 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 5825 4219 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5825 4125 50  0001 C CNN
+F 3 "~" H 5825 4125 50  0001 C CNN
+	1    5825 4125
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:Jumper_NO_Small JP?
 U 1 1 61CE6259
-P 5800 3850
+P 5825 4300
 AR Path="/61CCCB6C/61CE6259" Ref="JP?"  Part="1" 
 AR Path="/61CE6259" Ref="JP2"  Part="1" 
-F 0 "JP2" H 5800 4035 50  0000 C CNN
-F 1 "Jumper_NO_Small" H 5800 3944 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5800 3850 50  0001 C CNN
-F 3 "~" H 5800 3850 50  0001 C CNN
-	1    5800 3850
+F 0 "JP2" H 5825 4485 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 5825 4394 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5825 4300 50  0001 C CNN
+F 3 "~" H 5825 4300 50  0001 C CNN
+	1    5825 4300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5100 2900 5550 2900
+	5125 3350 5575 3350
 Wire Wire Line
-	5550 2900 5550 3150
+	5575 3350 5575 3600
 Wire Wire Line
-	5550 3150 5725 3150
+	5575 3600 5750 3600
 Wire Wire Line
-	5550 3150 5550 3675
+	5575 3600 5575 4125
 Wire Wire Line
-	5550 3675 5700 3675
-Connection ~ 5550 3150
+	5575 4125 5725 4125
+Connection ~ 5575 3600
 Wire Wire Line
-	5100 3000 5400 3000
+	5125 3450 5425 3450
 Wire Wire Line
-	5400 3000 5400 3325
+	5425 3450 5425 3775
 Wire Wire Line
-	5400 3325 5725 3325
+	5425 3775 5750 3775
 Wire Wire Line
-	5400 3325 5400 3850
+	5425 3775 5425 4300
 Wire Wire Line
-	5400 3850 5700 3850
-Connection ~ 5400 3325
+	5425 4300 5725 4300
+Connection ~ 5425 3775
 Wire Wire Line
-	5900 3850 6400 3850
+	5925 4300 6425 4300
 Wire Wire Line
-	6400 3850 6400 4025
+	6425 4300 6425 4475
 Wire Wire Line
-	5900 3675 6400 3675
+	5925 4125 6425 4125
 Wire Wire Line
-	6400 3675 6400 3850
-Connection ~ 6400 3850
+	6425 4125 6425 4300
+Connection ~ 6425 4300
 Wire Wire Line
-	5675 2075 5675 2850
+	5700 2525 5700 3300
 Wire Wire Line
-	5675 2850 6050 2850
+	5700 3300 6075 3300
 Wire Wire Line
-	6050 2850 6050 3150
+	6075 3300 6075 3600
 Wire Wire Line
-	6050 3150 5925 3150
-Connection ~ 5675 2075
+	6075 3600 5950 3600
+Connection ~ 5700 2525
 Wire Wire Line
-	5925 3325 6050 3325
+	5950 3775 6075 3775
 Wire Wire Line
-	6050 3325 6050 3150
-Connection ~ 6050 3150
+	6075 3775 6075 3600
+Connection ~ 6075 3600
 Wire Wire Line
 	3450 4425 3450 4375
 Wire Wire Line
@@ -628,8 +628,8 @@ F 3 "" H 3450 4375 50  0001 C CNN
 	1    3450 4375
 	-1   0    0    -1  
 $EndComp
-Text Notes 5425 1125 0    50   ~ 0
-Top Slot Adapter Breakout Board\nAttaches to top slot and provides general hardware interface\nCan have ROM in Pico flash
+Text Notes 5425 1125 0    50   ~ 10
+Bluetooth Adapter Breakout Board\nAttaches to top slot and allows Bluetooth communication\nCan have ROM in Pico flash (COMMS link)\nRTS/DTS not used\nOLED display for debug only, not needed for final PCB\n
 Wire Wire Line
 	1425 1275 925  1275
 Wire Wire Line
@@ -678,12 +678,12 @@ $EndComp
 $Comp
 L power:GND #PWR0114
 U 1 1 61CEDF39
-P 6400 4025
-F 0 "#PWR0114" H 6400 3775 50  0001 C CNN
-F 1 "GND" H 6405 3852 50  0000 C CNN
-F 2 "" H 6400 4025 50  0001 C CNN
-F 3 "" H 6400 4025 50  0001 C CNN
-	1    6400 4025
+P 6425 4475
+F 0 "#PWR0114" H 6425 4225 50  0001 C CNN
+F 1 "GND" H 6430 4302 50  0000 C CNN
+F 2 "" H 6425 4475 50  0001 C CNN
+F 3 "" H 6425 4475 50  0001 C CNN
+	1    6425 4475
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -746,9 +746,94 @@ Wire Wire Line
 Wire Wire Line
 	10725 1825 10725 2050
 $Sheet
-S 4250 5025 1450 700 
+S 5150 6750 1450 700 
 U 61D0535C
 F0 "Sheet61D0535B" 50
 F1 "Power.sch" 50
 $EndSheet
+$Comp
+L New_Library:Si2302CDS-n-channel TR?
+U 1 1 61FE4035
+P 3875 1575
+F 0 "TR?" H 4152 1621 50  0000 L CNN
+F 1 "Si2302CDS-n-channel" H 4152 1530 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3905 1725 20  0001 C CNN
+F 3 "" H 3875 1575 50  0001 C CNN
+	1    3875 1575
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 61FE693E
+P 3775 1075
+F 0 "R?" H 3834 1121 50  0000 L CNN
+F 1 "10k" H 3834 1030 50  0000 L CNN
+F 2 "" H 3775 1075 50  0001 C CNN
+F 3 "~" H 3775 1075 50  0001 C CNN
+	1    3775 1075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3775 1175 3775 1250
+Text GLabel 3650 825  0    50   Input ~ 0
+VCC
+Wire Wire Line
+	3650 825  3775 825 
+Wire Wire Line
+	3775 825  3775 975 
+$Comp
+L power:GND #PWR?
+U 1 1 61FEC72B
+P 3775 1975
+F 0 "#PWR?" H 3775 1725 50  0001 C CNN
+F 1 "GND" H 3780 1802 50  0000 C CNN
+F 2 "" H 3775 1975 50  0001 C CNN
+F 3 "" H 3775 1975 50  0001 C CNN
+	1    3775 1975
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3775 1975 3775 1875
+Text GLabel 9900 4225 2    50   Input ~ 0
+TX_TO_PSION
+Text GLabel 4825 1675 2    50   Input ~ 0
+TX_TO_PSION
+$Comp
+L Device:R_Small R?
+U 1 1 61FF1FB0
+P 4400 1875
+F 0 "R?" H 4459 1921 50  0000 L CNN
+F 1 "100k" H 4459 1830 50  0000 L CNN
+F 2 "" H 4400 1875 50  0001 C CNN
+F 3 "~" H 4400 1875 50  0001 C CNN
+	1    4400 1875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4075 1675 4400 1675
+Wire Wire Line
+	4400 1775 4400 1675
+Connection ~ 4400 1675
+Wire Wire Line
+	4400 1675 4825 1675
+$Comp
+L power:GND #PWR?
+U 1 1 61FF78FC
+P 4400 1975
+F 0 "#PWR?" H 4400 1725 50  0001 C CNN
+F 1 "GND" H 4405 1802 50  0000 C CNN
+F 2 "" H 4400 1975 50  0001 C CNN
+F 3 "" H 4400 1975 50  0001 C CNN
+	1    4400 1975
+	1    0    0    -1  
+$EndComp
+Text GLabel 3300 1250 0    50   Input ~ 0
+SD3
+Wire Wire Line
+	3300 1250 3775 1250
+Connection ~ 3775 1250
+Wire Wire Line
+	3775 1250 3775 1275
+Text Notes 1375 2600 0    50   ~ 0
+The 74LVC245 diection is set for all 8 data bits,\nso we run a separate TX from the Pico to the RX of the\nPsion (on bit 3). This is open collector as a level shifter\nand also inverts the data. Fortunately a stop bit is a 1 and a \nstart bit is a 0. The transistor being off can be driven by the psion\nwhen loading the ROM and is seen as a stop bit (idle) when in\nserial mode.
 $EndSCHEMATC
