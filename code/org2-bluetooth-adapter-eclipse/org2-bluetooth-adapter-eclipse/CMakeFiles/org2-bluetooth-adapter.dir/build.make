@@ -702,318 +702,10 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
 
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj: /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj -c /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c > CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
-
-CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i: cmake_force
@@ -1027,7 +719,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.i: cmake_force
@@ -1041,7 +733,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.obj: /tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.obj -c /tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.i: cmake_force
@@ -1055,7 +747,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.i: cmake_force
@@ -1069,7 +761,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i: cmake_force
@@ -1083,7 +775,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.i: cmake_force
@@ -1097,7 +789,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffunicode.c.i: cmake_force
@@ -1111,7 +803,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.i: cmake_force
@@ -1125,7 +817,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_spi.c.i: cmake_force
@@ -1139,7 +831,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/demo_logging.c.i: cmake_force
@@ -1153,7 +845,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/hw_config.c.i: cmake_force
@@ -1167,7 +859,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/spi.c.i: cmake_force
@@ -1181,7 +873,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/sd_card.c.i: cmake_force
@@ -1195,7 +887,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/sd_driver/crc.c.i: cmake_force
@@ -1209,7 +901,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/glue.c.i: cmake_force
@@ -1223,7 +915,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/f_util.c.i: cmake_force
@@ -1237,7 +929,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/ff_stdio.c.i: cmake_force
@@ -1251,7 +943,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/my_debug.c.i: cmake_force
@@ -1265,7 +957,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c.obj: /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c.obj -c /tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/src/rtc.c.i: cmake_force
@@ -1279,7 +971,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_spi/spi.c.i: cmake_force
@@ -1293,7 +985,7 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/flags.make
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj: /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj: CMakeFiles/org2-bluetooth-adapter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj -MF CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj.d -o CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.obj -c /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c
 
 CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_rtc/rtc.c.i: cmake_force
@@ -1352,28 +1044,6 @@ org2__bluetooth__adapter_OBJECTS = \
 "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj" \
 "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj" \
 "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj" \
-"CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj" \
 "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj" \
 "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj" \
 "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.obj" \
@@ -1445,28 +1115,6 @@ org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloade
 org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.obj
@@ -1491,7 +1139,7 @@ org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/tree/downloade
 org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/build.make
 org2-bluetooth-adapter.elf: pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 org2-bluetooth-adapter.elf: CMakeFiles/org2-bluetooth-adapter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Linking CXX executable org2-bluetooth-adapter.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Linking CXX executable org2-bluetooth-adapter.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/org2-bluetooth-adapter.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/arm-none-eabi-objcopy -Oihex org2-bluetooth-adapter.elf org2-bluetooth-adapter.hex
 	/usr/bin/arm-none-eabi-objcopy -Obinary org2-bluetooth-adapter.elf org2-bluetooth-adapter.bin

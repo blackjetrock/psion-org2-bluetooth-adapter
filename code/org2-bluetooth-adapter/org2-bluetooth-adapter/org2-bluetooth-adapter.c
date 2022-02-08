@@ -96,13 +96,13 @@ const uint SCL_PIN             = 17;
 
 typedef unsigned char BYTE;
 
-const int IO0_PIN       = 0;
-const int IO1_PIN       = 1;
-const int IO2_PIN       = 5;
-const int IO3_PIN       = 16;
-const int IO4_PIN       = 18;
-const int IO5_PIN       = 19;
-const int IO6_PIN       = 20;
+const int IO0_PIN         = 0;
+const int IO1_PIN         = 1;
+const int IO2_PIN         = 5;
+const int TRISTATE_TX_PIN = 16;
+const int TX_PSION_PIN    = 18;
+const int WROOM_ON_PIN    = 19;
+const int IO6_PIN         = 20;
 
 const int OP_CLK_PIN    = 22;
 const int IP_CLK_PIN    = 21;
@@ -4892,9 +4892,6 @@ int ioport_gpio[8] =
    IO0_PIN,
    IO1_PIN,
    IO2_PIN,
-   IO3_PIN,
-   IO4_PIN,
-   IO5_PIN,
    IO6_PIN,
    IO7_PIN,
   };
@@ -5391,6 +5388,11 @@ int main()
   gpio_init(SLOT_SOE_PIN);
   gpio_init(SLOT_SPGM_PIN);
 
+  // WROOM control
+  gpio_init(WROOM_ON_PIN);
+  gpio_init(TX_PSION_PIN);
+  gpio_init(TRISTATE_TX_PIN);
+  
   for(int i=0; i<8; i++)
     {
       gpio_init(data_gpio[i]);
@@ -5409,6 +5411,15 @@ int main()
   // LS_DIR is an output
   gpio_set_dir(LS_DIR_PIN, GPIO_OUT);
   set_bus_inputs();
+
+  // Comms link stuff
+  gpio_set_dir(WROOM_ON_PIN, GPIO_OUT);
+  gpio_set_dir(TX_PSION_PIN, GPIO_OUT);
+  gpio_set_dir(TRISTATE_TX_PIN, GPIO_OUT);
+
+  gpio_put(WROOM_ON_PIN, 0);
+  gpio_put(TX_PSION_PIN, 0);
+  gpio_put(TRISTATE_TX_PIN, 0);
 
   // Take both latch clocks high
   gpio_init(IP_CLK_PIN);
@@ -5648,16 +5659,27 @@ int main()
       
 	  if( (last_ss == 1) && (ss == 0) )
 	    {
+	      // We are selected. This means we are now going to 
+	      oled_set_xy(&oled0, 0,1);
+	      oled_display_string(&oled0, "SELECTED");
+	      
 	      // We are selected, look at SOE to see if we should drive the data bus or not
 	      if ( soe )
 		{
 		  int data;
-				  
-		  // High so don't drive the data bus, this is either a write or
-		  // it is a write of the 128K EPROM segment register
 
-		  // Capture data on bus
+		  // We are selected and OE is high. This is the comms link SELECTED state
+		  // In this state we drive TX to the Psion, accept data on RX and
+		  // pass those sgnals from and to the bluetooth module
+		  
+		  // Make the level shifters inputs from the Psion. The Psion TX will
+		  // appear and run through the level shifters and be collected
+		  // We have to explicitly drive the extra TX to the Psion circuitry
+		  // as all the level shifter signals are inputs.
 		  set_bus_inputs();
+
+		  
+#if 0		  
 		  data = get_data_bus();
 
 		  if( smr == 1 )
@@ -5682,9 +5704,13 @@ int main()
 
 		      set_ioport(data);
 		    }
+#endif
 		}
 	      else
 		{
+		  // Low SOE so this is a read of the ROm, we just use the normal
+		  // datapack read code
+		  
 		  // Low, so this is a read
 		  // Is it a read of the pak ID?
 		  //	      if( gpio_get(SLOT_SMR_PIN) && gpio_get(SLOT_SPGM_PIN) )
@@ -5733,6 +5759,10 @@ int main()
       
 	  if( (last_ss == 0 ) && (ss == 1) )
 	    {
+	      // Not selected
+	      oled_set_xy(&oled0, 0,1);
+	      oled_display_string(&oled0, "        ");
+
 	      // Deselect input latch if it was selected
 	      gpio_put(IP_CLK_PIN, 1);
 			  

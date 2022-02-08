@@ -656,390 +656,6 @@ tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.s
 .PHONY : tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.c.s
 
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.obj: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.i: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.i
-
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.s: tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.c.s
-
 tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/critical_section.obj: tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
 .PHONY : tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/critical_section.obj
 
@@ -1359,30 +975,6 @@ tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.s: tree/down
 tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
 .PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.obj: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.i: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.s: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
 
 tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 .PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj
@@ -1784,30 +1376,6 @@ tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shi
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 .PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.obj: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.i: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.s: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
-
 tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 .PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj
 
@@ -2112,78 +1680,6 @@ tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
 .PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
 
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.obj: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.i: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.s: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.obj: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
-
 tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 .PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj
 
@@ -2207,30 +1703,6 @@ tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s: tree/do
 tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 .PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj
-
-# target to build an object file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i
-
-# target to preprocess a source file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
-
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s: tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s
-
-# target to generate assembly for a file
-tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
-.PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 
 # Help Target
 help:
@@ -2300,54 +1772,6 @@ help:
 	@echo "... tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.obj"
 	@echo "... tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.i"
 	@echo "... tree/downloaded_tools/pico/pico-extras/src/rp2_common/pico_sd_card/sd_card.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/net/net_device.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/tusb.s"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/critical_section.obj"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/critical_section.i"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/critical_section.s"
@@ -2388,9 +1812,6 @@ help:
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.obj"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.i"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_dma/dma.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/flash.s"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.i"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.s"
@@ -2441,9 +1862,6 @@ help:
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_double/double_math.i"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_double/double_math.s"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.s"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.i"
@@ -2482,21 +1900,9 @@ help:
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i"
-	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s"
 .PHONY : help
 
 

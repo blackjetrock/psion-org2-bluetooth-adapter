@@ -29,7 +29,7 @@ pico_set_program_name(org2-bluetooth-adapter "org2-bluetooth-adapter")
 pico_set_program_version(org2-bluetooth-adapter "0.1")
 
 #pico_enable_stdio_uart(org2-bluetooth-adapter 0)
-pico_enable_stdio_usb(org2-bluetooth-adapter 1)
+pico_enable_stdio_usb(org2-bluetooth-adapter 0)
 
 # Add the standard library to the build
 target_link_libraries(org2-bluetooth-adapter pico_stdlib)

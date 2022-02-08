@@ -39,7 +39,6 @@ CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-
  /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
- /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
  /tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/include/pico/sem.h \
  /tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \

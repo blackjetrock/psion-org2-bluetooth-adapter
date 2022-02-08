@@ -508,13 +508,6 @@
 				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/common/pico_binary_info/include" kind="inc" path="" system="true"/>
 				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio/include" kind="inc" path="" system="true"/>
 				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include" kind="inc" path="" system="true"/>
-				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include" kind="inc" path="" system="true"/>
-				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src" kind="inc" path="" system="true"/>
-				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/src/common" kind="inc" path="" system="true"/>
-				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/lib/tinyusb/hw" kind="inc" path="" system="true"/>
-				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include" kind="inc" path="" system="true"/>
-				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_unique_id/include" kind="inc" path="" system="true"/>
-				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_flash/include" kind="inc" path="" system="true"/>
 				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/include" kind="inc" path="" system="true"/>
 				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_adc/include" kind="inc" path="" system="true"/>
 				<pathentry include="/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/pico_extras/src/rp2_common/pico_sd_card" kind="inc" path="" system="true"/>

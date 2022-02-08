@@ -53,7 +53,6 @@ CMakeFiles/org2-bluetooth-adapter.dir/org2-bluetooth-adapter.c.obj: \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
- /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_multicore/include/pico/multicore.h \
  /tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/include/pico/sync.h \
  /tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/include/pico/sem.h \
