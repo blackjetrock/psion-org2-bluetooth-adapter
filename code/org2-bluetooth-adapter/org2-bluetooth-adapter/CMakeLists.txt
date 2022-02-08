@@ -25,6 +25,10 @@ add_subdirectory(../no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI build)
 
 add_executable(org2-bluetooth-adapter org2-bluetooth-adapter.c )
 
+# PIO code for UART TX and RX
+pico_generate_pio_header(org2-bluetooth-adapter ${CMAKE_CURRENT_LIST_DIR}/org2-bluetooth-adapter.pio)
+
+
 pico_set_program_name(org2-bluetooth-adapter "org2-bluetooth-adapter")
 pico_set_program_version(org2-bluetooth-adapter "0.1")
 
@@ -42,6 +46,7 @@ target_compile_definitions(org2-bluetooth-adapter PUBLIC DEBUG N_SD_CARDS=${N_SD
 # Add any user requested libraries
 target_link_libraries(org2-bluetooth-adapter
         #hardware_i2c
+	pico_stdlib
         hardware_pio
         hardware_clocks
 	hardware_adc

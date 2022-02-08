@@ -130,6 +130,19 @@ ELF2UF2Build/fast:
 .PHONY : ELF2UF2Build/fast
 
 #=============================================================================
+# Target rules for targets named org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h
+
+# Build rule for target.
+org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h
+.PHONY : org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h
+
+# fast build rule for target.
+org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h.dir/build.make CMakeFiles/org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h.dir/build
+.PHONY : org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h/fast
+
+#=============================================================================
 # Target rules for targets named org2-bluetooth-adapter
 
 # Build rule for target.
@@ -1716,6 +1729,7 @@ help:
 	@echo "... PioasmBuild"
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default_padded_checksummed_asm"
+	@echo "... org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h"
 	@echo "... pico_audio_i2s_audio_i2s_pio_h"
 	@echo "... pico_audio_pwm_audio_pwm_pio_h"
 	@echo "... pico_audio_spdif_audio_spdif_pio_h"

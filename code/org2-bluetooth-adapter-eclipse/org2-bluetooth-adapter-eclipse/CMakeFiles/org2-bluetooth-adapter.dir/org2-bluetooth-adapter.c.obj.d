@@ -59,4 +59,13 @@ CMakeFiles/org2-bluetooth-adapter.dir/org2-bluetooth-adapter.c.obj: \
  /tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
  /tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
- /tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/include/pico/critical_section.h
+ /tree/downloaded_tools/pico/pico-sdk/src/common/pico_sync/include/pico/critical_section.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
+ /tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/org2-bluetooth-adapter.pio.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h

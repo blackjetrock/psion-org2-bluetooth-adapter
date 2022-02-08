@@ -1,6 +1,7 @@
 /tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles/rebuild_cache.dir
 /tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles/edit_cache.dir
 /tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles/ELF2UF2Build.dir
+/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles/org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h.dir
 /tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/CMakeFiles/org2-bluetooth-adapter.dir
 /tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/pico_extras/CMakeFiles/rebuild_cache.dir
 /tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/pico_extras/CMakeFiles/edit_cache.dir

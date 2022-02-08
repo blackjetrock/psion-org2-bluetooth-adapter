@@ -471,6 +471,7 @@
 				<pathentry kind="mac" name="__EXCEPTIONS" path="" value="1"/>
 				<pathentry kind="mac" name="__cpp_exceptions" path="" value="199711"/>
 				<pathentry kind="mac" name="__WCHAR_UNSIGNED__" path="" value="1"/>
+				<pathentry include="/tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse" kind="inc" path="" system="true"/>
 				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/common/pico_stdlib/include" kind="inc" path="" system="true"/>
 				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_gpio/include" kind="inc" path="" system="true"/>
 				<pathentry include="/tree/downloaded_tools/pico/pico-sdk/src/common/pico_base/include" kind="inc" path="" system="true"/>
@@ -548,6 +549,13 @@
 						<buildCommand>/usr/bin/make</buildCommand>
 						<buildArguments>-j4</buildArguments>
 						<buildTarget>ELF2UF2Build</buildTarget>
+						<stopOnError>true</stopOnError>
+						<useDefaultCommand>false</useDefaultCommand>
+					</target>
+					<target name=": org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+						<buildCommand>/usr/bin/make</buildCommand>
+						<buildArguments>-j4</buildArguments>
+						<buildTarget>org2-bluetooth-adapter_org2-bluetooth-adapter_pio_h</buildTarget>
 						<stopOnError>true</stopOnError>
 						<useDefaultCommand>false</useDefaultCommand>
 					</target>

@@ -20,6 +20,10 @@
 //#include "hardware/clocks.h"
 #include "pico/multicore.h"
 
+#include "hardware/pio.h"
+#include "hardware/uart.h"
+#include "org2-bluetooth-adapter.pio.h"
+
 //#include "f_util.h"
 
 //#include "ff.h"
@@ -138,6 +142,13 @@ volatile int soe_state = 1;
 volatile int ss_address = 0;
 volatile int ss_page = 0;
 
+// RX PIO parameters
+PIO rx_pio = pio0;
+uint rx_sm = 0;
+uint rx_offset;
+
+int rx_selected = 0;
+int rx_init = 0;
 
 // Memory that emulates a pak
 typedef unsigned char BYTE;
@@ -5334,6 +5345,14 @@ void handle_address(void)
 
 ////////////////////////////////////////////////////////////////////////////////
 //
+// Data received from PIO
+#define DATA_IN_LEN 1000
+
+int data_in_idx = 0;
+char data_in[DATA_IN_LEN];
+
+////////////////////////////////////////////////////////////////////////////////
+//
 //
 
 int main()
@@ -5576,6 +5595,18 @@ int main()
       
     }
 #endif
+
+  // We talk to Psion at 9600,n,8,1
+#define SERIAL_BAUD 9600
+  
+  // GPIO RX is GPIO12, or SD4  
+#define PIO_RX_PIN 12
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // Main Loop
+  //
+  ////////////////////////////////////////////////////////////////////////////////
   
   while(1)
     {
@@ -5624,7 +5655,6 @@ int main()
       // Mount and unmount the SD card to set the sd_ok_flag up
       mount_sd();
       unmount_sd();
-
       
       oled_set_xy(&oled0, 0,21);
       if( sd_ok_flag )
@@ -5650,6 +5680,14 @@ int main()
       
       while(1)
 	{
+	  if( rx_init )
+	    {
+	      // Capture RX serial data from the Psion
+	      char c = uart_rx_program_getc(rx_pio, rx_sm);
+	      data_in[data_in_idx] = c;
+	      data_in_idx = (data_in_idx+1) % DATA_IN_LEN;
+	    }
+	  
 	  // Read GPIO states
 	  ss     = gpio_get(SLOT_SS_PIN);
 	  sclk   = gpio_get(SLOT_SCLK_PIN);
@@ -5678,6 +5716,14 @@ int main()
 		  // as all the level shifter signals are inputs.
 		  set_bus_inputs();
 
+		  // Set up the PIO UART Tx and Rx
+		  // Set up the state machine we're going to use to receive data from the Psion
+		  if( !rx_init )
+		    {
+		      rx_offset = pio_add_program(rx_pio, &uart_rx_program);
+		      uart_rx_program_init(rx_pio, rx_sm, rx_offset, PIO_RX_PIN, SERIAL_BAUD);
+		      rx_init = 1;
+		    }
 		  
 #if 0		  
 		  data = get_data_bus();
@@ -5708,8 +5754,13 @@ int main()
 		}
 	      else
 		{
-		  // Low SOE so this is a read of the ROm, we just use the normal
+		  // Low SOE so this is a read of the ROM, we just use the normal
 		  // datapack read code
+		  // We have to make sure the data bus is set up correctly
+		  
+		  gpio_init(PIO_RX_PIN);
+		  gpio_set_pulls(PIO_RX_PIN, false, false);
+		  rx_init = 0;
 		  
 		  // Low, so this is a read
 		  // Is it a read of the pak ID?
