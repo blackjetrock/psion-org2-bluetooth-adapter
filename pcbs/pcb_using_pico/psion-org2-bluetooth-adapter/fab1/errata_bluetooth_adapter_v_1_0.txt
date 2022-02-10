@@ -2,6 +2,13 @@ Errata for Psion Organiser II Bluetooth Adapter
 ===============================================
 
 1. Add a serial eeprom to store persistant info like BT IDs to connect to.
-   Flash is fine, but may wear out faster than eeprom and be less replaceable
-   (more of a problem really).
+   Pico flash is fine, but may wear out faster than eeprom and be less
+   replaceable  (more of a problem really).
+2. Change supply so input goes to dc-dc converter to 6V or so then 5V
+   regulator and then to battery charger IC. Charger IC has battery attached.
+   Output from battery charger/power path goes to Pico which supplies 3V3
+   using its buck-boost conbverter.
+3. Allow 5V input from USB connector so power pack can be used as input
+4. Swap to ETA6002 as the footprint is better for hand soldering.
+
    

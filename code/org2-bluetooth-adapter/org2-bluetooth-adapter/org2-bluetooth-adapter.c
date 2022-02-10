@@ -147,8 +147,15 @@ PIO rx_pio = pio0;
 uint rx_sm = 0;
 uint rx_offset;
 
-int rx_selected = 0;
 int rx_init = 0;
+
+// TX PIO parameters
+PIO tx_pio = pio1;
+uint tx_sm = 0;
+uint tx_offset;
+
+int tx_init = 0;
+
 
 // Memory that emulates a pak
 typedef unsigned char BYTE;
@@ -5346,10 +5353,23 @@ void handle_address(void)
 ////////////////////////////////////////////////////////////////////////////////
 //
 // Data received from PIO
-#define DATA_IN_LEN 1000
+#define DATA_RX_LEN 1000
 
-int data_in_idx = 0;
-char data_in[DATA_IN_LEN];
+int data_rx_in_idx = 0;
+int data_rx_out_idx = 0;
+char data_in[DATA_RX_LEN];
+
+// data sent to PIO
+#define DATA_TX_LEN 1000
+
+int data_tx_in_idx = 0;
+int data_tx_out_idx = 0;
+char data_out[DATA_TX_LEN];
+
+long int tx_counter = 0;
+int tx_char = 0;
+
+char *tx_msg = "Bluetooth adapter data from Pico through level shifter..";
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -5436,7 +5456,7 @@ int main()
   gpio_set_dir(TX_PSION_PIN, GPIO_OUT);
   gpio_set_dir(TRISTATE_TX_PIN, GPIO_OUT);
 
-  gpio_put(WROOM_ON_PIN, 0);
+  gpio_put(WROOM_ON_PIN, 1);
   gpio_put(TX_PSION_PIN, 0);
   gpio_put(TRISTATE_TX_PIN, 0);
 
@@ -5602,6 +5622,12 @@ int main()
   // GPIO RX is GPIO12, or SD4  
 #define PIO_RX_PIN 12
 
+  // TX to Psion is GPIO 18
+#define PIO_TX_PIN 18
+
+  rx_offset = pio_add_program(rx_pio, &uart_rx_program);
+  tx_offset = pio_add_program(tx_pio, &uart_tx_program);
+  
   ////////////////////////////////////////////////////////////////////////////////
   //
   // Main Loop
@@ -5680,12 +5706,35 @@ int main()
       
       while(1)
 	{
+	  // Are we receiving?
 	  if( rx_init )
 	    {
-	      // Capture RX serial data from the Psion
-	      char c = uart_rx_program_getc(rx_pio, rx_sm);
-	      data_in[data_in_idx] = c;
-	      data_in_idx = (data_in_idx+1) % DATA_IN_LEN;
+	      if( !pio_sm_is_rx_fifo_empty(rx_pio, rx_sm) )
+		{
+		  // Capture RX serial data from the Psion
+		  char c = uart_rx_program_getc(rx_pio, rx_sm);
+		  data_in[data_rx_in_idx] = c;
+		  data_rx_in_idx = (data_rx_in_idx+1) % DATA_RX_LEN;
+		}
+	    }
+
+	  // Are we transmitting?
+	  if( tx_init )
+	    {
+	      // If there's something to transmit, send it to the PIO
+	      if( data_tx_out_idx != data_tx_in_idx )
+		{
+		  uart_tx_program_putc(tx_pio, tx_sm, data_out[data_tx_out_idx]);
+		  data_tx_out_idx = (data_tx_out_idx+1) % DATA_TX_LEN;
+		}
+	    }
+
+	  if( tx_counter++ == 300000 )
+	    {
+	      tx_counter = 0;
+	      data_out[data_tx_in_idx] = *(tx_msg+tx_char);
+	      tx_char = (tx_char +1) % strlen(tx_msg);
+	      data_tx_in_idx = (data_tx_in_idx+1) % DATA_TX_LEN;
 	    }
 	  
 	  // Read GPIO states
@@ -5720,10 +5769,21 @@ int main()
 		  // Set up the state machine we're going to use to receive data from the Psion
 		  if( !rx_init )
 		    {
-		      rx_offset = pio_add_program(rx_pio, &uart_rx_program);
+
 		      uart_rx_program_init(rx_pio, rx_sm, rx_offset, PIO_RX_PIN, SERIAL_BAUD);
 		      rx_init = 1;
 		    }
+		  
+		  if( !tx_init )
+		    {
+
+		      uart_tx_program_init(tx_pio, tx_sm, tx_offset, PIO_TX_PIN, SERIAL_BAUD);
+
+		      // Drive TX pin
+		      gpio_put(TRISTATE_TX_PIN, 1);
+		      tx_init = 1;
+		    }
+		  
 		  
 #if 0		  
 		  data = get_data_bus();
@@ -5758,9 +5818,17 @@ int main()
 		  // datapack read code
 		  // We have to make sure the data bus is set up correctly
 		  
+		  // deselected, so turn off all the link hardware
 		  gpio_init(PIO_RX_PIN);
 		  gpio_set_pulls(PIO_RX_PIN, false, false);
 		  rx_init = 0;
+		  
+		  // Don't drive TX pin any more
+		  gpio_put(TRISTATE_TX_PIN, 0);
+		  
+		  gpio_init(PIO_TX_PIN);
+		  gpio_set_pulls(PIO_TX_PIN, false, false);
+		  tx_init = 0;
 		  
 		  // Low, so this is a read
 		  // Is it a read of the pak ID?
@@ -5810,6 +5878,18 @@ int main()
       
 	  if( (last_ss == 0 ) && (ss == 1) )
 	    {
+	      // deselected, so turn off all the link hardware
+	      gpio_init(PIO_RX_PIN);
+	      gpio_set_pulls(PIO_RX_PIN, false, false);
+	      rx_init = 0;
+	      
+	      // Don't drive TX pin any more
+	      gpio_put(TRISTATE_TX_PIN, 0);
+	      
+	      gpio_init(PIO_TX_PIN);
+	      gpio_set_pulls(PIO_TX_PIN, false, false);
+	      tx_init = 0;
+	      
 	      // Not selected
 	      oled_set_xy(&oled0, 0,1);
 	      oled_display_string(&oled0, "        ");
