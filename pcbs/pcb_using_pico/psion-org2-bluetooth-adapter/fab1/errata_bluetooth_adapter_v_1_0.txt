@@ -10,5 +10,8 @@ Errata for Psion Organiser II Bluetooth Adapter
    using its buck-boost conbverter.
 3. Allow 5V input from USB connector so power pack can be used as input
 4. Swap to ETA6002 as the footprint is better for hand soldering.
+5. Use a separate 3V3 regulator for the WROOM so we don't put that current
+   through the 5V regulator and Pico.
+   
 
    
