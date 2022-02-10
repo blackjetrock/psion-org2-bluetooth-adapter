@@ -243,19 +243,6 @@ Wire Wire Line
 Connection ~ 1525 2375
 Wire Wire Line
 	1525 2375 1400 2375
-$Comp
-L power:+3V3 #PWR0120
-U 1 1 61D53982
-P 1950 900
-F 0 "#PWR0120" H 1950 750 50  0001 C CNN
-F 1 "+3V3" H 1965 1073 50  0000 C CNN
-F 2 "" H 1950 900 50  0001 C CNN
-F 3 "" H 1950 900 50  0001 C CNN
-	1    1950 900 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1950 900  1950 1025
 Wire Wire Line
 	1950 1225 1950 1475
 Wire Wire Line
@@ -263,19 +250,6 @@ Wire Wire Line
 Connection ~ 1950 1475
 Wire Wire Line
 	1950 1475 1950 1975
-$Comp
-L power:+3V3 #PWR0121
-U 1 1 61D55748
-P 2900 900
-F 0 "#PWR0121" H 2900 750 50  0001 C CNN
-F 1 "+3V3" H 2915 1073 50  0000 C CNN
-F 2 "" H 2900 900 50  0001 C CNN
-F 3 "" H 2900 900 50  0001 C CNN
-	1    2900 900 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 900  2900 1275
 Text GLabel 3250 1900 2    50   Input ~ 0
 VCC_ESP
 Wire Wire Line
@@ -304,4 +278,15 @@ F 3 "" H 2800 1575 50  0001 C CNN
 	1    2800 1575
 	1    0    0    -1  
 $EndComp
+Text GLabel 3475 750  2    50   Input ~ 0
+ESP_3V3
+Wire Wire Line
+	3475 750  2900 750 
+Wire Wire Line
+	2900 750  2900 1275
+Wire Wire Line
+	2900 750  1950 750 
+Wire Wire Line
+	1950 750  1950 1025
+Connection ~ 2900 750 
 $EndSCHEMATC
