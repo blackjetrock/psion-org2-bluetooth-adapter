@@ -51,8 +51,6 @@ Text GLabel 1300 2975 0    50   Input ~ 0
 SOE
 Text GLabel 1300 2875 0    50   Input ~ 0
 SS
-Text GLabel 1300 2775 0    50   Input ~ 0
-SPGM
 Text GLabel 1925 1375 2    50   Input ~ 0
 SS
 Text GLabel 1925 1275 2    50   Input ~ 0
@@ -65,8 +63,6 @@ Text GLabel 1425 1175 0    50   Input ~ 0
 SD4
 Text GLabel 1925 1075 2    50   Input ~ 0
 SD2
-Text GLabel 7425 2850 0    50   Input ~ 0
-P_SPGM
 Text GLabel 7425 2950 0    50   Input ~ 0
 P_SS
 Text GLabel 8825 3950 2    50   Input ~ 0
@@ -161,8 +157,6 @@ Text GLabel 2300 2975 2    50   Input ~ 0
 P_SOE
 Text GLabel 2300 2875 2    50   Input ~ 0
 P_SS
-Text GLabel 2300 2775 2    50   Input ~ 0
-P_SPGM
 Wire Wire Line
 	3575 6525 3575 6475
 Wire Wire Line
@@ -288,10 +282,6 @@ Text GLabel 8825 2850 2    50   Input ~ 0
 3V3_EN
 Text GLabel 8825 3050 2    50   Input ~ 0
 ADC_REF
-Text GLabel 8825 3550 2    50   Input ~ 0
-RUN
-Text GLabel 8825 2550 2    50   Input ~ 0
-VBUS
 $Comp
 L 74xx:74LS245 U?
 U 1 1 61CE61C7
@@ -638,10 +628,6 @@ Text GLabel 1925 1475 2    50   Input ~ 0
 AC
 Text GLabel 1425 1375 0    50   Input ~ 0
 VB
-Text GLabel 8825 3850 2    50   Input ~ 0
-IP_CLK
-Text GLabel 8825 3650 2    50   Input ~ 0
-OP_CLK
 $Comp
 L power:GND #PWR0107
 U 1 1 61CED555
@@ -953,4 +939,93 @@ TRI_TX
 Wire Wire Line
 	6000 2475 5700 2475
 Connection ~ 5700 2475
+$Comp
+L Memory_EEPROM:24LC32 U5
+U 1 1 62133209
+P 6750 1375
+F 0 "U5" H 6375 1850 50  0000 C CNN
+F 1 "24LC32" H 6475 1775 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6750 1375 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21072G.pdf" H 6750 1375 50  0001 C CNN
+	1    6750 1375
+	1    0    0    -1  
+$EndComp
+Text GLabel 7150 1375 2    50   Input ~ 0
+I2C_SCLK
+Text GLabel 7150 1275 2    50   Input ~ 0
+I2C_SDA
+$Comp
+L power:GND #PWR0138
+U 1 1 6213881D
+P 6750 1750
+F 0 "#PWR0138" H 6750 1500 50  0001 C CNN
+F 1 "GND" H 6755 1577 50  0000 C CNN
+F 2 "" H 6750 1750 50  0001 C CNN
+F 3 "" H 6750 1750 50  0001 C CNN
+	1    6750 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 1750 6750 1725
+$Comp
+L power:+3V3 #PWR0139
+U 1 1 6213CC87
+P 6750 825
+F 0 "#PWR0139" H 6750 675 50  0001 C CNN
+F 1 "+3V3" H 6765 998 50  0000 C CNN
+F 2 "" H 6750 825 50  0001 C CNN
+F 3 "" H 6750 825 50  0001 C CNN
+	1    6750 825 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 825  6750 975 
+Connection ~ 6750 1725
+Wire Wire Line
+	6750 1725 6750 1675
+Wire Wire Line
+	6750 1725 6125 1725
+Wire Wire Line
+	6125 1725 6125 1475
+Wire Wire Line
+	6125 1275 6350 1275
+Wire Wire Line
+	6350 1375 6125 1375
+Connection ~ 6125 1375
+Wire Wire Line
+	6125 1375 6125 1275
+Wire Wire Line
+	6350 1475 6125 1475
+Connection ~ 6125 1475
+Wire Wire Line
+	6125 1475 6125 1375
+$Comp
+L Device:R_Small R12
+U 1 1 62152431
+P 7800 1200
+F 0 "R12" H 7859 1246 50  0000 L CNN
+F 1 "R_Small" H 7859 1155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 7800 1200 50  0001 C CNN
+F 3 "~" H 7800 1200 50  0001 C CNN
+	1    7800 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 1475 7800 1300
+Wire Wire Line
+	7150 1475 7800 1475
+Wire Wire Line
+	7800 1100 7800 975 
+Wire Wire Line
+	7800 975  6750 975 
+Connection ~ 6750 975 
+Wire Wire Line
+	6750 975  6750 1075
+Text GLabel 8000 1475 2    50   Input ~ 0
+EEPROM_WP
+Wire Wire Line
+	8000 1475 7800 1475
+Connection ~ 7800 1475
+Text GLabel 8825 3650 2    50   Input ~ 0
+EEPROM_WP
 $EndSCHEMATC
