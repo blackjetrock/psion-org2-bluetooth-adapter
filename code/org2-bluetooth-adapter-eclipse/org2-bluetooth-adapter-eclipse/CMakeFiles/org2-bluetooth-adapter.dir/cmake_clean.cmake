@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/org2-bluetooth-adapter.dir/match.c.obj"
+  "CMakeFiles/org2-bluetooth-adapter.dir/match.c.obj.d"
   "CMakeFiles/org2-bluetooth-adapter.dir/org2-bluetooth-adapter.c.obj"
   "CMakeFiles/org2-bluetooth-adapter.dir/org2-bluetooth-adapter.c.obj.d"
   "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj"
@@ -122,6 +124,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj.d"
   "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj"
   "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d"
+  "CMakeFiles/org2-bluetooth-adapter.dir/wireless-bluetooth-adapter.c.obj"
+  "CMakeFiles/org2-bluetooth-adapter.dir/wireless-bluetooth-adapter.c.obj.d"
   "org2-bluetooth-adapter.elf"
   "org2-bluetooth-adapter.pdb"
 )

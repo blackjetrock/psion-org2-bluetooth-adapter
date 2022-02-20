@@ -23,7 +23,11 @@ add_subdirectory(../no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI build)
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(org2-bluetooth-adapter org2-bluetooth-adapter.c )
+add_executable(org2-bluetooth-adapter
+org2-bluetooth-adapter.c
+wireless-bluetooth-adapter.c
+match.c
+)
 
 # PIO code for UART TX and RX
 pico_generate_pio_header(org2-bluetooth-adapter ${CMAKE_CURRENT_LIST_DIR}/org2-bluetooth-adapter.pio)

@@ -285,6 +285,30 @@ pico_scanvideo_dpi_timing_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico_extras/src/rp2_common/pico_scanvideo_dpi/CMakeFiles/pico_scanvideo_dpi_timing_pio_h.dir/build.make pico_extras/src/rp2_common/pico_scanvideo_dpi/CMakeFiles/pico_scanvideo_dpi_timing_pio_h.dir/build
 .PHONY : pico_scanvideo_dpi_timing_pio_h/fast
 
+match.obj: match.c.obj
+.PHONY : match.obj
+
+# target to build an object file
+match.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/match.c.obj
+.PHONY : match.c.obj
+
+match.i: match.c.i
+.PHONY : match.i
+
+# target to preprocess a source file
+match.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/match.c.i
+.PHONY : match.c.i
+
+match.s: match.c.s
+.PHONY : match.s
+
+# target to generate assembly for a file
+match.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/match.c.s
+.PHONY : match.c.s
+
 org2-bluetooth-adapter.obj: org2-bluetooth-adapter.c.obj
 .PHONY : org2-bluetooth-adapter.obj
 
@@ -1717,6 +1741,30 @@ tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 .PHONY : tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 
+wireless-bluetooth-adapter.obj: wireless-bluetooth-adapter.c.obj
+.PHONY : wireless-bluetooth-adapter.obj
+
+# target to build an object file
+wireless-bluetooth-adapter.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/wireless-bluetooth-adapter.c.obj
+.PHONY : wireless-bluetooth-adapter.c.obj
+
+wireless-bluetooth-adapter.i: wireless-bluetooth-adapter.c.i
+.PHONY : wireless-bluetooth-adapter.i
+
+# target to preprocess a source file
+wireless-bluetooth-adapter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/wireless-bluetooth-adapter.c.i
+.PHONY : wireless-bluetooth-adapter.c.i
+
+wireless-bluetooth-adapter.s: wireless-bluetooth-adapter.c.s
+.PHONY : wireless-bluetooth-adapter.s
+
+# target to generate assembly for a file
+wireless-bluetooth-adapter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/org2-bluetooth-adapter.dir/build.make CMakeFiles/org2-bluetooth-adapter.dir/wireless-bluetooth-adapter.c.s
+.PHONY : wireless-bluetooth-adapter.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1738,6 +1786,9 @@ help:
 	@echo "... pico_sd_card_sd_card_pio_h"
 	@echo "... bs2_default"
 	@echo "... org2-bluetooth-adapter"
+	@echo "... match.obj"
+	@echo "... match.i"
+	@echo "... match.s"
 	@echo "... org2-bluetooth-adapter.obj"
 	@echo "... org2-bluetooth-adapter.i"
 	@echo "... org2-bluetooth-adapter.s"
@@ -1917,6 +1968,9 @@ help:
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i"
 	@echo "... tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s"
+	@echo "... wireless-bluetooth-adapter.obj"
+	@echo "... wireless-bluetooth-adapter.i"
+	@echo "... wireless-bluetooth-adapter.s"
 .PHONY : help
 
 

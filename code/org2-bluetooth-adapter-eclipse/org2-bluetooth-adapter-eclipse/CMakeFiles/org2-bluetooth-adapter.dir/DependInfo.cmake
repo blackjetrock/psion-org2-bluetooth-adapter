@@ -126,6 +126,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/tree/downloaded_tools/pico/org2-bluetooth-adapter/match.c" "CMakeFiles/org2-bluetooth-adapter.dir/match.c.obj" "gcc" "CMakeFiles/org2-bluetooth-adapter.dir/match.c.obj.d"
   "/tree/downloaded_tools/pico/org2-bluetooth-adapter/org2-bluetooth-adapter.c" "CMakeFiles/org2-bluetooth-adapter.dir/org2-bluetooth-adapter.c.obj" "gcc" "CMakeFiles/org2-bluetooth-adapter.dir/org2-bluetooth-adapter.c.obj.d"
   "/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj" "gcc" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ff.c.obj.d"
   "/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.obj" "gcc" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI/ff14a/source/ffsystem.c.obj.d"
@@ -181,6 +182,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj" "gcc" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj.d"
   "/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj" "gcc" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj.d"
   "/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" "gcc" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d"
+  "/tree/downloaded_tools/pico/org2-bluetooth-adapter/wireless-bluetooth-adapter.c" "CMakeFiles/org2-bluetooth-adapter.dir/wireless-bluetooth-adapter.c.obj" "gcc" "CMakeFiles/org2-bluetooth-adapter.dir/wireless-bluetooth-adapter.c.obj.d"
   "/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj" "gcc" "CMakeFiles/org2-bluetooth-adapter.dir/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj.d"
   )
 

@@ -212,6 +212,16 @@
 			<location>/tree/downloaded_tools/pico/org2-bluetooth-adapter/org2-bluetooth-adapter.c</location>
 		</link>
 		<link>
+			<name>[Targets]/[exe] org2-bluetooth-adapter/Source Files/wireless-bluetooth-adapter.c</name>
+			<type>1</type>
+			<location>/tree/downloaded_tools/pico/org2-bluetooth-adapter/wireless-bluetooth-adapter.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] org2-bluetooth-adapter/Source Files/match.c</name>
+			<type>1</type>
+			<location>/tree/downloaded_tools/pico/org2-bluetooth-adapter/match.c</location>
+		</link>
+		<link>
 			<name>[Targets]/[exe] org2-bluetooth-adapter/Source Files/stdlib.c</name>
 			<type>1</type>
 			<location>/tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c</location>

@@ -22,6 +22,10 @@
 
 #include "hardware/pio.h"
 #include "hardware/uart.h"
+
+#include "org2-bluetooth-adapter.h"
+#include "wireless-bluetooth-adapter.h"
+
 #include "org2-bluetooth-adapter.pio.h"
 
 //#include "f_util.h"
@@ -32,74 +36,12 @@
 //#include "my_debug.h"
 //#include "rtc.h"
 //#include "sd_card.h"
-
-// Use this if breakpoints don't work
-#define DEBUG_STOP {volatile int x = 1; while(x) {} }
-
-// Are we compiling for the gadget breakout or the picopak?
-#define PICOPAK 0
-
-// Bluetooth adapter pinout slightly different
-#define BLUETOOTH_ADAPTER 1
-
-// Drop into a loop that displays key states and does nothing else
-#define KEY_DEBUG_ONLY                0
-#define TEST_IOPORT                   0
-
-// Interrupts may muck up the pack interface, but it does seem to run with them enabled.
-// If USB is ever to work then interrupts need to be enabled.
-#define NO_INTERRUPTS_WHILE_POLLING   1
-#define TEST_STDIO                    0
-
-// Redefine pins to match our hardware
-#define PICO_SD_CLK_PIN        5
-#define PICO_SD_CMD_PIN       18
-#define PICO_SD_DAT0_PIN      19
-#define ENABLE_4_PIN           0
-
-#define SUPPORT_ID_BYTE        1
-#define PAK_ID_BYTE         0x01
-#define READ_ONLY              0
-#define INIT_PAK_MEMORY        1
-#define FF_FIRST_BYTES         0
-
-// Direct access to GPIO registers is faster, and we need speed
-#define DIRECT_GPIO            1
-
-// Number of buttons used for the menu system. The 'exit polling' button is not in this
-// list, it is coded as a GPIO line as we don't want to waste time processing the menu
-// buttons inthe fast polling loop
-
-#define NUM_BUTTONS            3
-
-// All organiser files are in this subdirectory on the SD card, just to keep things tidy
-// and allow the card to be used for other things if needed.
-#define PAK_DIR                "/PAK"
-
-// Debounce
-#define MAX_BUT_COUNT          6
-
-bool sd_ok_flag = false;
-
-// Do we use a polling loop of interrupts?
-#define USE_INTERRUPTS         0
-#define USE_POLLING            1
-
-// For added speed, we poll the address counter stuff on the other core
-#define MULTICORE_POLL         1
-
-// The address into pak memory
-#define PAK_ADDRESS (ss_address | ss_page)
-
 // For the OLED display
+
+
+
 const uint SDA_PIN             = 28;
 const uint SCL_PIN             = 17;
-
-#ifndef I2C_FUNCTIONS_H_
-#define I2C_FUNCTIONS_H_
-
-typedef unsigned char BYTE;
-
 const int IO0_PIN         = 0;
 const int IO1_PIN         = 1;
 const int IO2_PIN         = 5;
@@ -142,6 +84,8 @@ volatile int soe_state = 1;
 volatile int ss_address = 0;
 volatile int ss_page = 0;
 
+bool sd_ok_flag = false;
+
 // RX PIO parameters
 PIO rx_pio = pio0;
 uint rx_sm = 0;
@@ -172,6 +116,7 @@ int trace_i = 0;
 
 //#define WRITE_TRAP if( (PAK_ADDRESS + data) == 0)  while(1);
 
+
 #define WRITE_TRAP
 
 #define PAK_MEMORY_SIZE  65536
@@ -187,22 +132,6 @@ int max_filenum = 0;
 #define PAK_FILE_NAME_FORMAT "pak%05d.opk"
 #define PAK_FILE_NAME_GLOB   "pak*.opk"
 
-// I2C Port descriptor
-typedef struct _I2C_PORT_DESC
-{
-  unsigned char sdaport;
-  unsigned char sdabit;
-  unsigned char sclport;
-  unsigned char sclbit;
-} I2C_PORT_DESC;
-
-
-// Slave device descriptor
-typedef struct _I2C_SLAVE_DESC
-{
-  I2C_PORT_DESC *port;             // Port the device is on
-  unsigned char slave_7bit_addr;        // SLave address
-} I2C_SLAVE_DESC;
 
 
 #if PICOPAK
@@ -2379,11 +2308,6 @@ void i2c_stop(I2C_PORT_DESC *port);
 int i2c_send_byte(I2C_PORT_DESC *port, BYTE b);
 int i2c_read_bytes(I2C_SLAVE_DESC *slave, int n, BYTE *data);
 void i2c_send_bytes(I2C_SLAVE_DESC *slave, int n, BYTE *data);
-#
-
-
-#endif /* I2C_FUNCTIONS_H_ */
-
 
 /*
  * i2c_functions.c
@@ -2838,7 +2762,6 @@ void oled_set_brightness(I2C_SLAVE_DESC *slave, int percent)
 void oled_set_xy(I2C_SLAVE_DESC *slave, int x, int y)
 {
   unsigned char seq[3];
-
   x = x % 128;
   y = y % 64;
   seq[0] = 0xB0+y/8;      // Set page
@@ -5353,15 +5276,11 @@ void handle_address(void)
 ////////////////////////////////////////////////////////////////////////////////
 //
 // Data received from PIO
-#define DATA_RX_LEN 1000
-
 int data_rx_in_idx = 0;
 int data_rx_out_idx = 0;
 char data_in[DATA_RX_LEN];
 
 // data sent to PIO
-#define DATA_TX_LEN 1000
-
 int data_tx_in_idx = 0;
 int data_tx_out_idx = 0;
 char data_out[DATA_TX_LEN];
@@ -5662,7 +5581,7 @@ int main()
       oled_clear_display(&oled0);
       
       oled_set_xy(&oled0, 0,0);
-      oled_display_string(&oled0, "Bluetooth Adapter");
+      oled_display_string(&oled0, "Bluetooth Adapter X");
       
 #if USE_INTERRUPTS
       oled_set_xy(&oled0, 0,14);
@@ -5703,22 +5622,39 @@ int main()
       //oled_display_string(&oled0, current_file);
 
 #endif
+
+      wireless_init();
       
       while(1)
 	{
-	  // Are we receiving?
+	  wireless_taskloop();
+	  
+	  ////////////////////////////////////////////////////////////////////////////////
+	  //
+	  // Process data coming from and going to the Psion
+	  //
+	  ////////////////////////////////////////////////////////////////////////////////
+	  
+	  // Are we receiving from Psion?
 	  if( rx_init )
 	    {
 	      if( !pio_sm_is_rx_fifo_empty(rx_pio, rx_sm) )
 		{
 		  // Capture RX serial data from the Psion
 		  char c = uart_rx_program_getc(rx_pio, rx_sm);
+
+		  // Send it to the PSion
+		  cl_bt_buffer[cl_bt_in] = c;
+		  cl_bt_in = (cl_bt_in + 1) % CL_BT_BUFFER_SIZE;
+
+#if 0		  
 		  data_in[data_rx_in_idx] = c;
 		  data_rx_in_idx = (data_rx_in_idx+1) % DATA_RX_LEN;
+#endif
 		}
 	    }
 
-	  // Are we transmitting?
+	  // Are we transmitting to Psion?
 	  if( tx_init )
 	    {
 	      // If there's something to transmit, send it to the PIO
@@ -5736,6 +5672,12 @@ int main()
 	      tx_char = (tx_char +1) % strlen(tx_msg);
 	      data_tx_in_idx = (data_tx_in_idx+1) % DATA_TX_LEN;
 	    }
+
+	  ////////////////////////////////////////////////////////////////////////////////
+	  //
+	  // Handle the ROM interface over the top slot bus
+	  //
+	  ////////////////////////////////////////////////////////////////////////////////
 	  
 	  // Read GPIO states
 	  ss     = gpio_get(SLOT_SS_PIN);
@@ -5743,11 +5685,23 @@ int main()
 	  soe    = gpio_get(SLOT_SOE_PIN);
 	  smr    = gpio_get(SLOT_SMR_PIN);
 	  spgm   = gpio_get(SLOT_SPGM_PIN);
-      
-	  if( (last_ss == 1) && (ss == 0) )
+
+	  if( soe)
+	    {
+	      oled_set_xy(&oled0, 100, SEL_Y);
+	      oled_display_string(&oled0, "SOE");
+	    }
+	  else
+	    {
+	      oled_set_xy(&oled0, 100, SEL_Y);
+	      oled_display_string(&oled0, "   ");
+	    }
+	  
+	  //	  if( (last_ss == 1) && (ss == 0) )
+	  if( (ss == 0) )
 	    {
 	      // We are selected. This means we are now going to 
-	      oled_set_xy(&oled0, 0,1);
+	      oled_set_xy(&oled0, 0, SEL_Y);
 	      oled_display_string(&oled0, "SELECTED");
 	      
 	      // We are selected, look at SOE to see if we should drive the data bus or not
@@ -5757,7 +5711,7 @@ int main()
 
 		  // We are selected and OE is high. This is the comms link SELECTED state
 		  // In this state we drive TX to the Psion, accept data on RX and
-		  // pass those sgnals from and to the bluetooth module
+		  // pass those signals from and to the bluetooth module
 		  
 		  // Make the level shifters inputs from the Psion. The Psion TX will
 		  // appear and run through the level shifters and be collected
@@ -5829,7 +5783,10 @@ int main()
 		  gpio_init(PIO_TX_PIN);
 		  gpio_set_pulls(PIO_TX_PIN, false, false);
 		  tx_init = 0;
-		  
+
+		  oled_set_xy(&oled0, 0, SEL_Y);
+		  oled_display_string(&oled0, "ROM RD  ");
+
 		  // Low, so this is a read
 		  // Is it a read of the pak ID?
 		  //	      if( gpio_get(SLOT_SMR_PIN) && gpio_get(SLOT_SPGM_PIN) )
@@ -5891,8 +5848,8 @@ int main()
 	      tx_init = 0;
 	      
 	      // Not selected
-	      oled_set_xy(&oled0, 0,1);
-	      oled_display_string(&oled0, "        ");
+	      oled_set_xy(&oled0, 0, SEL_Y);
+	      oled_display_string(&oled0, "DESEL   ");
 
 	      // Deselect input latch if it was selected
 	      gpio_put(IP_CLK_PIN, 1);
