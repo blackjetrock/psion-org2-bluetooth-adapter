@@ -849,14 +849,14 @@ void ifn_ready(int i)
 
 void write_display_extra(int y, char ch)
 {
+#if USE_OLED  
   char str[2] = " ";
   str[0] = ch;
+
   oled_set_xy(&oled0, 120, y*8);
   oled_display_string(&oled0, str);
-
+#endif
 }
-
-
 
 // Processes the +IPD string
 void ifn_ipd(int i)

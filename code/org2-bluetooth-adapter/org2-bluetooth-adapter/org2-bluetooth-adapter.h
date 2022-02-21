@@ -92,6 +92,9 @@ extern const int LS_DIR_PIN;
 // For added speed, we poll the address counter stuff on the other core
 #define MULTICORE_POLL         1
 
+// Do we drive the OLED?
+#define USE_OLED   0
+
 // The address into pak memory
 #define PAK_ADDRESS (ss_address | ss_page)
 

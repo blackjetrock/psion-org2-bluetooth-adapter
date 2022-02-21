@@ -5688,22 +5688,27 @@ int main()
 
 	  if( soe)
 	    {
+#if USE_OLED
 	      oled_set_xy(&oled0, 100, SEL_Y);
 	      oled_display_string(&oled0, "SOE");
+#endif
 	    }
 	  else
 	    {
+#if USE_OLED	      
 	      oled_set_xy(&oled0, 100, SEL_Y);
 	      oled_display_string(&oled0, "   ");
+#endif
 	    }
 	  
 	  //	  if( (last_ss == 1) && (ss == 0) )
 	  if( (ss == 0) )
 	    {
+#if USE_OLED
 	      // We are selected. This means we are now going to 
 	      oled_set_xy(&oled0, 0, SEL_Y);
 	      oled_display_string(&oled0, "SELECTED");
-	      
+#endif	      
 	      // We are selected, look at SOE to see if we should drive the data bus or not
 	      if ( soe )
 		{
@@ -5783,10 +5788,10 @@ int main()
 		  gpio_init(PIO_TX_PIN);
 		  gpio_set_pulls(PIO_TX_PIN, false, false);
 		  tx_init = 0;
-
+#if USE_OLED
 		  oled_set_xy(&oled0, 0, SEL_Y);
 		  oled_display_string(&oled0, "ROM RD  ");
-
+#endif
 		  // Low, so this is a read
 		  // Is it a read of the pak ID?
 		  //	      if( gpio_get(SLOT_SMR_PIN) && gpio_get(SLOT_SPGM_PIN) )
@@ -5848,9 +5853,10 @@ int main()
 	      tx_init = 0;
 	      
 	      // Not selected
+#if USE_OLED
 	      oled_set_xy(&oled0, 0, SEL_Y);
 	      oled_display_string(&oled0, "DESEL   ");
-
+#endif
 	      // Deselect input latch if it was selected
 	      gpio_put(IP_CLK_PIN, 1);
 			  
@@ -6019,37 +6025,7 @@ int main()
       
 	}
 
-#if NO_INTERRUPTS_WHILE_POLLING 
-      // Re-enable interrupts
-      //irq_set_mask_enabled(0xf, true);
-#endif
-      
-      // leave the bus as inputs
-      //set_bus_inputs();
-
-      //DEBUG_STOP
-#if 1
-      // Indicate we are now in menu
-      oled_clear_display(&oled0);
-      oled_set_xy(&oled0, 0,0);
-      oled_display_string(&oled0, "Datapak Gadget Menu");
-#endif
-
-#if 0      
-      draw_menu(&oled0, current_menu, true);
-#endif
-      
-      // Menu loop
-      menuloop_done = 0;
-      
-      while(!menuloop_done)
-	{
-
-	  // Run menu
-	  update_buttons();
-	  
-	}
-
+      // The bluetooth adapter code never exits from the main loop
     }
 #endif
 }
