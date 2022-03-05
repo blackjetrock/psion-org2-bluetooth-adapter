@@ -112,15 +112,15 @@ int tx_init = 0;
 //
 
 // WRX PIO parameters
-PIO wrx_pio = pio0;
-uint wrx_sm = 2;
+PIO wrx_pio = pio1;
+uint wrx_sm = 0;
 uint wrx_offset;
 
 int wrx_init = 0;
 
 // WTX PIO parameters
-PIO wtx_pio = pio0;
-uint wtx_sm = 3;
+PIO wtx_pio = pio1;
+uint wtx_sm = 1;
 uint wtx_offset;
 
 int wtx_init = 0;
@@ -5520,9 +5520,11 @@ int main()
   
   int count = 0;
 
+  wireless_init();
 #if 1
   // Start the address handling on the other core
-  multicore_launch_core1(handle_address);
+  //  multicore_launch_core1(handle_address);
+   multicore_launch_core1(wireless_taskloop);
 #endif
 
   // Main loop that updates OLED display if using interrupts
@@ -5591,6 +5593,9 @@ int main()
   wtx_offset = pio_add_program(wtx_pio, &uart_wtx_program);
 #endif
 
+  // Set up wireless module serial port
+  uart_wrx_program_init(wrx_pio, wrx_sm, wrx_offset, PIO_W_RX_PIN, W_SERIAL_BAUD);
+  uart_wtx_program_init(wtx_pio, wtx_sm, wtx_offset, PIO_W_TX_PIN, W_SERIAL_BAUD);
   
   ////////////////////////////////////////////////////////////////////////////////
   //
@@ -5668,11 +5673,12 @@ int main()
 
 #endif
 
-      wireless_init();
+      //      wireless_init();
       
       while(1)
 	{
-	  wireless_taskloop();
+	  //wireless_taskloop();
+	  handle_address();
 	  
 	  ////////////////////////////////////////////////////////////////////////////////
 	  //
