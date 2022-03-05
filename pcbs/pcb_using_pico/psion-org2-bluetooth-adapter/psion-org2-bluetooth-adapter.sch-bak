@@ -1028,4 +1028,6 @@ Wire Wire Line
 Connection ~ 7800 1475
 Text GLabel 8825 3650 2    50   Input ~ 0
 EEPROM_WP
+Text GLabel 8825 3850 2    50   Input ~ 0
+AC_ON
 $EndSCHEMATC

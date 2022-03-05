@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include "pico/stdlib.h"
 //#include "hardware/i2c.h"
-//#include "hardware/pio.h"
+#include "hardware/pio.h"
 //#include "hardware/clocks.h"
 #include "hardware/uart.h"
 #include "hardware/irq.h"
@@ -15,6 +15,7 @@
 #include "org2-bluetooth-adapter.h"
 #include "match.h"
 #include "wireless-bluetooth-adapter.h"
+#include "org2-bluetooth-adapter.pio.h"
 
 void start_task(char *label);
 void remove_string(char *str);
@@ -149,6 +150,8 @@ int pending_tx = 0;
 
 ////////////////////////////////////////////////////////////////////////////////
 
+#define WIFI_UART_PIO 1
+
 #define UART_ID uart1 //uart0
 #define BAUD_RATE 115200
 #define DATA_BITS 8
@@ -208,19 +211,60 @@ void on_uart_rx()
 
 #endif
 
+#if WIFI_UART_PIO
+#endif
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Functions to send and receive data from and to the Wireless module
+//
+////////////////////////////////////////////////////////////////////////////////
+
+// Send text to the wifi module.
+// We have to buffer the text and send it as the PIO FIFO becomes free
+
+// This function puts something in the buffer
+void w_uart_puts(char *cmd)
+{
+  while( *cmd != '\0' )
+    {
+      data_out[data_tx_in_idx] = *(cmd++);
+      data_tx_in_idx = (data_tx_in_idx + 1) % DATA_TX_LEN;
+    }
+}
+
+// This function sends the buffer contents if it can
+void w_uart_tasks(void)
+{
+  if( data_wtx_out_idx != data_wtx_in_idx )
+    {
+      uart_wtx_program_putc(wtx_pio, wtx_sm, data_out[data_wtx_out_idx]);
+      data_wtx_out_idx = (data_wtx_out_idx+1) % DATA_WTX_LEN;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Initialise the wireless module code
+//
+////////////////////////////////////////////////////////////////////////////////
 
 void wireless_init(void)
 {
-  
+
+#if WIFI_UART_PIO
+
+
+#else
   sleep_us(1000000);  
   gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);
   gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
-  uart_init(UART_ID, BAUD_RATE);
-  
-  uart_set_hw_flow(UART_ID, false, false);
-  
-  uart_set_fifo_enabled(UART_ID, false);
 
+  uart_init(UART_ID, BAUD_RATE);
+  uart_set_hw_flow(UART_ID, false, false);
+  uart_set_fifo_enabled(UART_ID, false);
+#endif
+  
 #if UART_INTERRUPTS
   // Set up a RX interrupt
   // We need to set up the handler first
@@ -244,7 +288,12 @@ void wireless_init(void)
 
   // Turn power to the WROOM off for a while
   gpio_put(WROOM_ON_PIN, 0);
-  sleep_ms(100);
+  for(volatile int i=0; i<100000;i++)
+    {
+      volatile j = i+i;
+    }
+  
+  //sleep_ms(100);
   gpio_put(WROOM_ON_PIN, 1);
 
   input_text[0] = '\0';
@@ -344,7 +393,7 @@ W_TASK tasklist[] =
    {WTY_DELAY_MS,         "2000",                           rfn_null},
    {WTY_PUTS,             "AT+BTSPPINIT=2\r\n",             rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
-   {WTY_PUTS,             "AT+BTNAME=\"PsionOrgBA\"\r\n",   rfn_null},
+   {WTY_PUTS,             "AT+BTNAME=\"PsionOrgCD\"\r\n",   rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
    {WTY_PUTS,             "AT+BTSCANMODE=2\r\n",            rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
@@ -1032,7 +1081,11 @@ void ifn_startdisc(int i)
 	      if( strcmp(bt_connect_name, match_str_arg[0]) == 0 )
 		{
 		    sprintf(cmd, "AT+BTSPPCONN=0,0,\"%s\"\r\n", bt_device[bt_device_i].id);
+#if WIFI_UART_PIO
+		    w_uart_puts(cmd);
+#else
 		    uart_puts(UART_ID, cmd);
+#endif
 		}
 
 	      bt_device_i++;
@@ -1108,8 +1161,13 @@ void send_bt_reply(void)
 {
   output_text_len = strlen(output_text);
   sprintf(cmd, "AT+BTSPPSEND=0,%d\r\n", output_text_len);
-  uart_puts(UART_ID, cmd);
 
+#if WIFI_UART_PIO
+    w_uart_puts(cmd);
+#else
+    uart_puts(UART_ID, cmd);
+#endif
+    
   sending_bt_data = 1;
 }
 
@@ -1122,7 +1180,13 @@ void send_reply(void)
 {
   output_text_len = strlen(output_text);
   sprintf(cmd, "AT+CIPSEND=0,%d\r\n", output_text_len);
-  uart_puts(UART_ID, cmd);
+
+#if WIFI_UART_PIO
+    w_uart_puts(cmd);
+#else
+    uart_puts(UART_ID, cmd);
+#endif
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1232,7 +1296,7 @@ void start_task(char *label)
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-// Main task loop for communicatinmg with the WROOM
+// Main task loop for communicating with the WROOM
 //
 
 void wireless_taskloop(void)
@@ -1241,6 +1305,9 @@ void wireless_taskloop(void)
   int c;
   int process_text = 0;
 
+  // Process serial data coming from and going to the Wifi module
+  w_uart_tasks();
+  
   // The bluetooth to comms link processing runs independently of the rest of this loop
   if( bt_cl_in != bt_cl_out )
     {
@@ -1338,20 +1405,31 @@ void wireless_taskloop(void)
       irq_text_out_ptr = (irq_text_out_ptr % INTERRUPT_TEXT_SIZE);
       
 #else
-    
-  while( uart_is_readable (UART_ID) )
-    {
-      char ch[2] = " ";
-      ch[0] = uart_getc(UART_ID);
-#endif
       
-      // check for special characters
+#if WIFI_UART_PIO      
+      while( !pio_sm_is_rx_fifo_empty(wrx_pio, wrx_sm) )
+	{
+	  char ch[2] = " ";
+	  
+	  // Capture RX serial data from the Psion
+	  ch[0] = uart_wrx_program_getc(wrx_pio, wrx_sm);
+
+#else
+      while( uart_is_readable (UART_ID) )
+       {
+         char ch[2] = " ";
+         ch[0] = uart_getc(UART_ID);
+#endif
+	      
+#endif
+	      
+	 // check for special characters
       switch(ch[0])
 	{
 	  // CTRL-T: Toggle between BT cli and BT comms link and keyboard emulation
 	case 0x14:
 	  bluetooth_mode = (bluetooth_mode + 1) % NUM_BT_MODES;
-	  strcpy(output_text, "Unkown mode");
+	  strcpy(output_text, "Unknown mode");
 	  
 	  switch(bluetooth_mode )
 	    {
@@ -1523,11 +1601,20 @@ void wireless_taskloop(void)
 #if WIFI_TEST
 	      printxy_str(0,3, cmd);
 #endif
-	      uart_puts(UART_ID, cmd);
-	      break;
 
+#if WIFI_UART_PIO
+    w_uart_puts(cmd);
+#else
+    uart_puts(UART_ID, cmd);
+#endif
+	      break;
+	      
 	    case WTY_SENDDATA:
+#if WIFI_UART_PIO
+	      w_uart_puts(output_text);
+#else
 	      uart_puts(UART_ID, output_text);
+#endif
 	      break;
 	      
 	    case WTY_STOP:

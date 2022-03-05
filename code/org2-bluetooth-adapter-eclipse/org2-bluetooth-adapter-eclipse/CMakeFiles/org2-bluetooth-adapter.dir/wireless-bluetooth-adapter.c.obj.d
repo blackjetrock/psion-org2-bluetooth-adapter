@@ -53,9 +53,18 @@ CMakeFiles/org2-bluetooth-adapter.dir/wireless-bluetooth-adapter.c.obj: \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
  /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
  /tree/downloaded_tools/pico/org2-bluetooth-adapter/org2-bluetooth-adapter.h \
  /tree/downloaded_tools/pico/org2-bluetooth-adapter/match.h \
- /tree/downloaded_tools/pico/org2-bluetooth-adapter/wireless-bluetooth-adapter.h
+ /tree/downloaded_tools/pico/org2-bluetooth-adapter/wireless-bluetooth-adapter.h \
+ /tree/downloaded_tools/pico/org2-bluetooth-adapter-eclipse/org2-bluetooth-adapter.pio.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
+ /tree/downloaded_tools/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h

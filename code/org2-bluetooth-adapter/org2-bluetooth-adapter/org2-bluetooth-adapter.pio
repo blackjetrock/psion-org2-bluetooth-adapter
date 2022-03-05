@@ -1,45 +1,15 @@
- 
+; 
 ;
 ; Copyright (c) 2020 Raspberry Pi (Trading) Ltd.
 ;
 ; SPDX-License-Identifier: BSD-3-Clause
 ;
 
-.program uart_rx_mini
-
-; Minimum viable 8n1 UART receiver. Wait for the start bit, then sample 8 bits
-; with the correct timing.
-; IN pin 0 is mapped to the GPIO used as UART RX.
-; Autopush must be enabled, with a threshold of 8.
-
-    wait 0 pin 0        ; Wait for start bit
-    set x, 7 [10]       ; Preload bit counter, delay until eye of first data bit
-bitloop:                ; Loop 8 times
-    in pins, 1          ; Sample data
-    jmp x-- bitloop [6] ; Each iteration is 8 cycles
-
-% c-sdk {
-#include "hardware/clocks.h"
-#include "hardware/gpio.h"
-
-static inline void uart_rx_mini_program_init(PIO pio, uint sm, uint offset, uint pin, uint baud) {
-    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, false);
-    pio_gpio_init(pio, pin);
-    gpio_pull_up(pin);
-
-    pio_sm_config c = uart_rx_mini_program_get_default_config(offset);
-    sm_config_set_in_pins(&c, pin); // for WAIT, IN
-    // Shift to right, autopush enabled
-    sm_config_set_in_shift(&c, true, true, 8);
-    sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_RX);
-    // SM transmits 1 bit per 8 execution cycles.
-    float div = (float)clock_get_hz(clk_sys) / (8 * baud);
-    sm_config_set_clkdiv(&c, div);
-    
-    pio_sm_init(pio, sm, offset, &c);
-    pio_sm_set_enabled(pio, sm, true);
-}
-%}
+;-------------------------------------------------------------------------------
+;
+; Psion Serial port
+;
+;
 
 .program uart_rx
 
@@ -64,6 +34,9 @@ good_stop:              ; No delay before returning to start; a little slack is
 
 
 % c-sdk {
+#include "hardware/clocks.h"
+#include "hardware/gpio.h"
+
 static inline void uart_rx_program_init(PIO pio, uint sm, uint offset, uint pin, uint baud) {
     pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, false);
     pio_gpio_init(pio, pin);
@@ -74,8 +47,10 @@ static inline void uart_rx_program_init(PIO pio, uint sm, uint offset, uint pin,
     sm_config_set_jmp_pin(&c, pin); // for JMP
     // Shift to right, autopull disabled
     sm_config_set_in_shift(&c, true, false, 32);
+    
     // Deeper FIFO as we're not doing any TX
-    sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_RX);
+    //sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_RX);
+    
     // SM transmits 1 bit per 8 execution cycles.
     float div = (float)clock_get_hz(clk_sys) / (8 * baud);
     sm_config_set_clkdiv(&c, div);
@@ -121,6 +96,7 @@ bitloop:                   ; This loop will run 8 times (8n1 UART)
 
 % c-sdk {
 #include "hardware/clocks.h"
+#include "hardware/gpio.h"
 
 static inline void uart_tx_program_init(PIO pio, uint sm, uint offset, uint pin_tx, uint baud) {
     // Tell PIO to initially drive output-high on the selected pin, then map PIO
@@ -141,7 +117,7 @@ static inline void uart_tx_program_init(PIO pio, uint sm, uint offset, uint pin_
     sm_config_set_sideset_pins(&c, pin_tx);
 
     // We only need TX, so get an 8-deep FIFO!
-    sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
+    //sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
 
     // SM transmits 1 bit per 8 execution cycles.
     float div = (float)clock_get_hz(clk_sys) / (8 * baud);
@@ -161,6 +137,140 @@ static inline void uart_tx_program_putc(PIO pio, uint sm, char c) {
 static inline void uart_tx_program_puts(PIO pio, uint sm, const char *s) {
     while (*s)
         uart_tx_program_putc(pio, sm, *s++);
+}
+
+%}
+
+
+;-------------------------------------------------------------------------------
+;
+; Wifi Module serial port
+;
+;
+
+
+.program uart_wrx
+
+; Slightly more fleshed-out 8n1 UART receiver which handles framing errors and
+; break conditions more gracefully.
+; IN pin 0 and JMP pin are both mapped to the GPIO used as UART WRX.
+
+start:
+    wait 0 pin 0        ; Stall until start bit is asserted
+    set x, 7    [10]    ; Preload bit counter, then delay until halfway through
+bitloop:                ; the first data bit (12 cycles incl wait, set).
+    in pins, 1          ; Shift data bit into ISR
+    jmp x-- bitloop [6] ; Loop 8 times, each loop iteration is 8 cycles
+    jmp pin good_stop   ; Check stop bit (should be high)
+
+    irq 4 rel           ; Either a framing error or a break. Set a sticky flag,
+    wait 1 pin 0        ; and wait for line to return to idle state.
+    jmp start           ; Don't push data if we didn't see good framing.
+
+good_stop:              ; No delay before returning to start; a little slack is
+    push                ; important in case the TX clock is slightly too fast.
+
+
+% c-sdk {
+
+#include "hardware/clocks.h"
+#include "hardware/gpio.h"
+
+static inline void uart_wrx_program_init(PIO pio, uint sm, uint offset, uint pin, uint baud) {
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, false);
+    pio_gpio_init(pio, pin);
+    gpio_pull_up(pin);
+
+    pio_sm_config c = uart_wrx_program_get_default_config(offset);
+    sm_config_set_in_pins(&c, pin); // for WAIT, IN
+    sm_config_set_jmp_pin(&c, pin); // for JMP
+    // Shift to right, autopull disabled
+    sm_config_set_in_shift(&c, true, false, 32);
+    
+    // Deeper FIFO as we're not doing any TX
+    //sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_RX);
+    
+    // SM transmits 1 bit per 8 execution cycles.
+    float div = (float)clock_get_hz(clk_sys) / (8 * baud);
+    sm_config_set_clkdiv(&c, div);
+    
+    pio_sm_init(pio, sm, offset, &c);
+    pio_sm_set_enabled(pio, sm, true);
+}
+
+static inline char uart_wrx_program_getc(PIO pio, uint sm) {
+    // 8-bit read from the uppermost byte of the FIFO, as data is left-justified
+    io_rw_8 *rxfifo_shift = (io_rw_8*)&pio->rxf[sm] + 3;
+    while (pio_sm_is_rx_fifo_empty(pio, sm))
+        tight_loop_contents();
+    return (char)*rxfifo_shift;
+}
+
+%}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// WTX UART
+//
+////////////////////////////////////////////////////////////////////////////////
+
+.program uart_wtx
+.side_set 1 opt
+
+; An 8n1 UART transmit program.
+; OUT pin 0 and side-set pin 0 are both mapped to UART WTX pin.
+
+    pull       side 0 [7]  ; Assert stop bit, or stall with line in idle state
+    set x, 7   side 1 [7]  ; Preload bit counter, assert start bit for 8 clocks
+bitloop:                   ; This loop will run 8 times (8n1 UART)
+    out pins, 1            ; Shift 1 bit from OSR to the first OUT pin
+    jmp x-- bitloop   [6]  ; Each loop iteration is 8 cycles.
+
+
+% c-sdk {
+#include "hardware/clocks.h"
+#include "hardware/gpio.h"
+
+static inline void uart_wtx_program_init(PIO pio, uint sm, uint offset, uint pin_wtx, uint baud) {
+    // Tell PIO to initially drive output-high on the selected pin, then map PIO
+    // onto that pin with the IO muxes.
+    pio_sm_set_pins_with_mask(pio, sm, 1u << pin_wtx, 1u << pin_wtx);
+    pio_sm_set_pindirs_with_mask(pio, sm, 1u << pin_wtx, 1u << pin_wtx);
+    pio_gpio_init(pio, pin_wtx);
+
+    pio_sm_config c = uart_wtx_program_get_default_config(offset);
+
+    // OUT shifts to right, no autopull
+    sm_config_set_out_shift(&c, true, false, 32);
+
+    // We are mapping both OUT and side-set to the same pin, because sometimes
+    // we need to assert user data onto the pin (with OUT) and sometimes
+    // assert constant values (start/stop bit)
+    sm_config_set_out_pins(&c, pin_wtx, 1);
+    sm_config_set_sideset_pins(&c, pin_wtx);
+
+    // We only need TX, so get an 8-deep FIFO!
+    //sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
+
+    // SM transmits 1 bit per 8 execution cycles.
+    float div = (float)clock_get_hz(clk_sys) / (8 * baud);
+    sm_config_set_clkdiv(&c, div);
+
+    pio_sm_init(pio, sm, offset, &c);
+    pio_sm_set_enabled(pio, sm, true);
+}
+
+static inline void uart_wtx_program_putc(PIO pio, uint sm, char c) {
+  uint32_t c32 = (uint32_t)c;
+
+  c32 ^= 0xffffffff;
+  pio_sm_put_blocking(pio, sm, c32);
+}
+
+static inline void uart_wtx_program_puts(PIO pio, uint sm, const char *s) {
+    while (*s)
+        uart_wtx_program_putc(pio, sm, *s++);
 }
 
 %}

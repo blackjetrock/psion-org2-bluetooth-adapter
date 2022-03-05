@@ -13,8 +13,9 @@
 
 // Interrupts may muck up the pack interface, but it does seem to run with them enabled.
 // If USB is ever to work then interrupts need to be enabled.
-#define NO_INTERRUPTS_WHILE_POLLING   0
+#define NO_INTERRUPTS_WHILE_POLLING   1
 #define TEST_STDIO                    0
+#define FORCE_TRISTATE_OFF            0
 
 // Redefine pins to match our hardware
 #define PICO_SD_CLK_PIN        5
@@ -83,7 +84,8 @@ extern const int SLOT_SD7_PIN;
 
 extern const int LS_DIR_PIN;
 
-#define UART_INTERRUPTS      1     // Interrupt for UART data collection
+#define UART_INTERRUPTS      0     // Interrupt for UART data collection
+#define WIFI_UART_PIO        1     // Wifi module UART is PIO based
 
 // Do we use a polling loop of interrupts?
 #define USE_INTERRUPTS         0
@@ -105,7 +107,10 @@ typedef unsigned char BYTE;
 #define IFN_Y   (1*8)
 
 ////////////////////////////////////////////////////////////////////////////////
+//
 // I2C Port descriptor
+//
+
 typedef struct _I2C_PORT_DESC
 {
   unsigned char sdaport;
@@ -126,6 +131,24 @@ extern I2C_SLAVE_DESC oled0;
 
 ////////////////////////////////////////////////////////////////////////////////
 //
+// PIO UART variables
+//
+
+extern PIO wrx_pio;
+extern uint wrx_sm;
+extern uint wrx_offset;
+
+extern int wrx_init;
+
+// WTX PIO parameters
+extern PIO wtx_pio;
+extern uint wtx_sm;
+extern uint wtx_offset;
+
+extern int wtx_init;
+
+////////////////////////////////////////////////////////////////////////////////
+//
 // Data received from PIO
 #define DATA_RX_LEN 1000
 
@@ -133,9 +156,24 @@ extern int data_rx_in_idx;
 extern int data_rx_out_idx;
 extern char data_in[DATA_RX_LEN];
 
-// data sent to PIO
+// Data sent to Psion
 #define DATA_TX_LEN 1000
 
 extern int data_tx_in_idx;
 extern int data_tx_out_idx;
 extern char data_out[DATA_TX_LEN];
+
+// Wifi module buffers
+#define DATA_WRX_LEN 1000
+
+extern int data_wrx_in_idx;
+extern int data_wrx_out_idx;
+extern char w_data_in[DATA_WRX_LEN];
+
+// Data sent to wifi module
+
+#define DATA_WTX_LEN 1000
+
+extern int data_wtx_in_idx;
+extern int data_wtx_out_idx;
+extern char w_data_out[DATA_WTX_LEN];

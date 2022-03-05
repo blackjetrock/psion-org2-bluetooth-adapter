@@ -1,0 +1,8 @@
+Psion bluetooth Adapter V2.0 Errata
+===================================
+
+1. U8 pinout is wrong
+2. LED on U8 should go to output of U8 not VREG as that can be powered by
+   USB. Or not if USB not attached.
+   
+   

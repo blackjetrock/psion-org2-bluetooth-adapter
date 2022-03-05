@@ -1,4 +1,4 @@
--9206333140692497269
+-9206329868095175269
 8wTermBlk
 8wTermBlk
 
@@ -75501,6 +75501,20 @@ SRX882
 0
 6
 6
+ajm_kicad
+TE_2-1734839-4_1x24-1MP_P0.5mm_Horizontal_reversed_pinout
+TE FPC connector, 24 top-side contacts, 0.5mm pitch, SMT, https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1734839%7FC%7Fpdf%7FEnglish%7FENG_CD_1734839_C_C_1734839.pdf%7F4-1734839-0
+te fpc 1734839
+0
+26
+25
+ajm_kicad
+fx502p_keypad
+
+
+0
+12
+2
 mirotan-due-cassette-shield
 AG12864E
 STN/FSTN LCD 128x64 dot https://www.digchip.com/datasheets/parts/datasheet/1121/AG-12864E-pdf.php

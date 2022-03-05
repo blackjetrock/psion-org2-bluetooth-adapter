@@ -50,8 +50,8 @@ const int TX_PSION_PIN    = 18;
 const int WROOM_ON_PIN    = 19;
 const int IO6_PIN         = 20;
 
-const int OP_CLK_PIN    = 22;
-const int IP_CLK_PIN    = 21;
+const int EEPROM_WP_PIN    = 22;
+const int AC_ON_PIN    = 21;
 
 // IO7 can also be used to measure battery voltage
 const int IO7_PIN       = 26;
@@ -86,6 +86,12 @@ volatile int ss_page = 0;
 
 bool sd_ok_flag = false;
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// Psion serial port using PIO so we don't have to have interrupts running
+// which messes up the ROM emulation code.
+//
+
 // RX PIO parameters
 PIO rx_pio = pio0;
 uint rx_sm = 0;
@@ -94,12 +100,32 @@ uint rx_offset;
 int rx_init = 0;
 
 // TX PIO parameters
-PIO tx_pio = pio1;
-uint tx_sm = 0;
+PIO tx_pio = pio0;
+uint tx_sm = 1;
 uint tx_offset;
 
 int tx_init = 0;
 
+//
+// Wifi module serial port using PIO so we don't have to have interrupts running
+// which messes up the ROM emulation code.
+//
+
+// WRX PIO parameters
+PIO wrx_pio = pio0;
+uint wrx_sm = 2;
+uint wrx_offset;
+
+int wrx_init = 0;
+
+// WTX PIO parameters
+PIO wtx_pio = pio0;
+uint wtx_sm = 3;
+uint wtx_offset;
+
+int wtx_init = 0;
+
+////////////////////////////////////////////////////////////////////////////////
 
 // Memory that emulates a pak
 typedef unsigned char BYTE;
@@ -5275,12 +5301,14 @@ void handle_address(void)
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-// Data received from PIO
+// Data received from Psion using PIO
+//
+
 int data_rx_in_idx = 0;
 int data_rx_out_idx = 0;
 char data_in[DATA_RX_LEN];
 
-// data sent to PIO
+// Data sent to Psion using PIO
 int data_tx_in_idx = 0;
 int data_tx_out_idx = 0;
 char data_out[DATA_TX_LEN];
@@ -5289,6 +5317,20 @@ long int tx_counter = 0;
 int tx_char = 0;
 
 char *tx_msg = "Bluetooth adapter data from Pico through level shifter..";
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Data to and from the Wireless module
+
+int data_wrx_in_idx = 0;
+int data_wrx_out_idx = 0;
+char w_data_in[DATA_WRX_LEN];
+
+// Data sent to Wifi module using PIO
+int data_wtx_in_idx = 0;
+int data_wtx_out_idx = 0;
+char w_data_out[DATA_WTX_LEN];
+
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -5370,6 +5412,7 @@ int main()
   gpio_set_dir(LS_DIR_PIN, GPIO_OUT);
   set_bus_inputs();
 
+#if 1
   // Comms link stuff
   gpio_set_dir(WROOM_ON_PIN, GPIO_OUT);
   gpio_set_dir(TX_PSION_PIN, GPIO_OUT);
@@ -5379,15 +5422,18 @@ int main()
   gpio_put(TX_PSION_PIN, 0);
   gpio_put(TRISTATE_TX_PIN, 0);
 
-  // Take both latch clocks high
-  gpio_init(IP_CLK_PIN);
-  gpio_set_dir(IP_CLK_PIN, GPIO_OUT);
-  gpio_put(IP_CLK_PIN, 1);
-  
-  gpio_init(OP_CLK_PIN);
-  gpio_set_dir(OP_CLK_PIN, GPIO_OUT);
-  gpio_put(OP_CLK_PIN, 0);
-  
+  // AC off  
+  gpio_init(AC_ON_PIN);
+  gpio_set_dir(AC_ON_PIN, GPIO_OUT);
+  gpio_put(AC_ON_PIN, 0);
+
+  // WP eeprom off
+  gpio_init(EEPROM_WP_PIN);
+  gpio_set_dir(EEPROM_WP_PIN, GPIO_OUT);
+  gpio_put(EEPROM_WP_PIN, 0);
+#endif
+
+#if 0
   // Set up IO port
   gpio_set_function(IO7_PIN, GPIO_FUNC_NULL);
   
@@ -5400,6 +5446,8 @@ int main()
 
   int ioport_value = 0;
   set_ioport(ioport_value);
+
+#endif
   
   // test ioport
 #if TEST_IOPORT
@@ -5472,7 +5520,7 @@ int main()
   
   int count = 0;
 
-#if MULTICORE_POLL
+#if 1
   // Start the address handling on the other core
   multicore_launch_core1(handle_address);
 #endif
@@ -5508,33 +5556,12 @@ int main()
   process_config_file(&oled0);
 #endif
 
-  // Try writing to latch.
-  // Psion MUST NOT be attached
-
-#if 0
-  for(int i=0; i<8; i++)
-    {
-      gpio_set_dir(data_gpio[i], GPIO_OUT);
-    }
-  
-  set_bus_outputs();
-
-  int countx = 0;
-  
-  while(1)
-    {
-      set_data_bus(countx++);
-      sleep_us(100000L);
-      gpio_put(OP_CLK_PIN, 1);
-      gpio_put(OP_CLK_PIN, 1);
-      gpio_put(OP_CLK_PIN, 1);
-      gpio_put(OP_CLK_PIN, 1);
-      gpio_put(OP_CLK_PIN, 1);
-      gpio_put(OP_CLK_PIN, 0);
-      
-    }
-#endif
-
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // Serial Port setup
+  //
+  // Psion
+  //
   // We talk to Psion at 9600,n,8,1
 #define SERIAL_BAUD 9600
   
@@ -5543,9 +5570,27 @@ int main()
 
   // TX to Psion is GPIO 18
 #define PIO_TX_PIN 18
-
+#if 1
   rx_offset = pio_add_program(rx_pio, &uart_rx_program);
   tx_offset = pio_add_program(tx_pio, &uart_tx_program);
+#endif
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // Wifi module
+  //
+  
+#define W_SERIAL_BAUD 115200
+  
+  // GPIO RX is GPIO5
+#define PIO_W_RX_PIN 5
+
+  // TX to Wifi module is GPIO4
+#define PIO_W_TX_PIN 4
+#if 1
+  wrx_offset = pio_add_program(wrx_pio, &uart_wrx_program);
+  wtx_offset = pio_add_program(wtx_pio, &uart_wtx_program);
+#endif
+
   
   ////////////////////////////////////////////////////////////////////////////////
   //
@@ -5634,7 +5679,7 @@ int main()
 	  // Process data coming from and going to the Psion
 	  //
 	  ////////////////////////////////////////////////////////////////////////////////
-	  
+#if 1	  
 	  // Are we receiving from Psion?
 	  if( rx_init )
 	    {
@@ -5643,7 +5688,7 @@ int main()
 		  // Capture RX serial data from the Psion
 		  char c = uart_rx_program_getc(rx_pio, rx_sm);
 
-		  // Send it to the PSion
+		  // Send it to the (bluetooth) comms link
 		  cl_bt_buffer[cl_bt_in] = c;
 		  cl_bt_in = (cl_bt_in + 1) % CL_BT_BUFFER_SIZE;
 
@@ -5657,14 +5702,19 @@ int main()
 	  // Are we transmitting to Psion?
 	  if( tx_init )
 	    {
-	      // If there's something to transmit, send it to the PIO
-	      if( data_tx_out_idx != data_tx_in_idx )
+	      // If the fifo is not full
+	      if( !pio_sm_is_tx_fifo_full (tx_pio, tx_sm) )
 		{
-		  uart_tx_program_putc(tx_pio, tx_sm, data_out[data_tx_out_idx]);
-		  data_tx_out_idx = (data_tx_out_idx+1) % DATA_TX_LEN;
+		  // If there's something to transmit, send it to the PIO
+		  if( data_tx_out_idx != data_tx_in_idx )
+		    {
+		      uart_tx_program_putc(tx_pio, tx_sm, data_out[data_tx_out_idx]);
+		      data_tx_out_idx = (data_tx_out_idx+1) % DATA_TX_LEN;
+		    }
 		}
 	    }
 
+#if 0
 	  if( tx_counter++ == 300000 )
 	    {
 	      tx_counter = 0;
@@ -5672,7 +5722,9 @@ int main()
 	      tx_char = (tx_char +1) % strlen(tx_msg);
 	      data_tx_in_idx = (data_tx_in_idx+1) % DATA_TX_LEN;
 	    }
-
+#endif
+#endif
+	  
 	  ////////////////////////////////////////////////////////////////////////////////
 	  //
 	  // Handle the ROM interface over the top slot bus
@@ -5686,6 +5738,7 @@ int main()
 	  smr    = gpio_get(SLOT_SMR_PIN);
 	  spgm   = gpio_get(SLOT_SPGM_PIN);
 
+#if 0
 	  if( soe)
 	    {
 #if USE_OLED
@@ -5700,9 +5753,10 @@ int main()
 	      oled_display_string(&oled0, "   ");
 #endif
 	    }
-	  
+
+#endif
 	  //	  if( (last_ss == 1) && (ss == 0) )
-	  if( (ss == 0) )
+	  if( ss == 0 )
 	    {
 #if USE_OLED
 	      // We are selected. This means we are now going to 
@@ -5723,7 +5777,7 @@ int main()
 		  // We have to explicitly drive the extra TX to the Psion circuitry
 		  // as all the level shifter signals are inputs.
 		  set_bus_inputs();
-
+#if 1
 		  // Set up the PIO UART Tx and Rx
 		  // Set up the state machine we're going to use to receive data from the Psion
 		  if( !rx_init )
@@ -5739,11 +5793,15 @@ int main()
 		      uart_tx_program_init(tx_pio, tx_sm, tx_offset, PIO_TX_PIN, SERIAL_BAUD);
 
 		      // Drive TX pin
+#if FORCE_TRISTATE_OFF
+		      gpio_put(TRISTATE_TX_PIN, 0);
+#else
 		      gpio_put(TRISTATE_TX_PIN, 1);
+#endif
 		      tx_init = 1;
 		    }
 		  
-		  
+#endif		  
 #if 0		  
 		  data = get_data_bus();
 
@@ -5754,9 +5812,9 @@ int main()
 		      TRACE('A');
 		      
 		      //TRACE(data);
-		      gpio_put(OP_CLK_PIN, 1);
-		      gpio_put(OP_CLK_PIN, 1);
-		      gpio_put(OP_CLK_PIN, 0);
+		      //		      gpio_put(OP_CLK_PIN, 1);
+		      //gpio_put(OP_CLK_PIN, 1);
+		      //gpio_put(OP_CLK_PIN, 0);
 
 		      //set_ioport(data);
 		    }
@@ -5773,24 +5831,34 @@ int main()
 		}
 	      else
 		{
-		  // Low SOE so this is a read of the ROM, we just use the normal
+
+#if 1		  // Low SOE so this is a read of the ROM, we just use the normal
 		  // datapack read code
 		  // We have to make sure the data bus is set up correctly
-		  
-		  // deselected, so turn off all the link hardware
+
 		  gpio_init(PIO_RX_PIN);
+		  
 		  gpio_set_pulls(PIO_RX_PIN, false, false);
+		  
 		  rx_init = 0;
 		  
 		  // Don't drive TX pin any more
 		  gpio_put(TRISTATE_TX_PIN, 0);
 		  
+		  // Init the GPIO for the TX pin, it will revert to beiung an input
+		  // We turn it into an output and set it low so that the transistor
+		  // used to drive the TX signal does not pull the data line down.
+		  // That corrupts the ROM read.
 		  gpio_init(PIO_TX_PIN);
-		  gpio_set_pulls(PIO_TX_PIN, false, false);
+		  gpio_set_dir(PIO_TX_PIN, GPIO_OUT);
+		  gpio_put(PIO_TX_PIN, 0);
+		  
 		  tx_init = 0;
+		  
 #if USE_OLED
 		  oled_set_xy(&oled0, 0, SEL_Y);
 		  oled_display_string(&oled0, "ROM RD  ");
+#endif
 #endif
 		  // Low, so this is a read
 		  // Is it a read of the pak ID?
@@ -5810,9 +5878,9 @@ int main()
 #if 0			  
 			  set_bus_inputs();
 
-			  gpio_put(OP_CLK_PIN, 1);
-			  gpio_put(OP_CLK_PIN, 1);
-			  gpio_put(OP_CLK_PIN, 0);
+			  //gpio_put(OP_CLK_PIN, 1);
+			  //gpio_put(OP_CLK_PIN, 1);
+			  //gpio_put(OP_CLK_PIN, 0);
 #endif			  
 			}
 		      else
@@ -5822,7 +5890,7 @@ int main()
 			  set_shifters_out();
 			  
 			  // Place inputs on bus until deselected
-			  gpio_put(IP_CLK_PIN, 0);
+			  //			  gpio_put(IP_CLK_PIN, 0);
 
 			  TRACE('D');
 			}
@@ -5842,14 +5910,22 @@ int main()
 	    {
 	      // deselected, so turn off all the link hardware
 	      gpio_init(PIO_RX_PIN);
+
 	      gpio_set_pulls(PIO_RX_PIN, false, false);
+
 	      rx_init = 0;
 	      
 	      // Don't drive TX pin any more
 	      gpio_put(TRISTATE_TX_PIN, 0);
-	      
+
+	      // Init the GPIO for the TX pin, it will revert to beiung an input
+	      // We turn it into an output and set it low so that the transistor
+	      // used to drive the TX signal does not pull the data line down.
+	      // That corrupts the ROM read.
 	      gpio_init(PIO_TX_PIN);
-	      gpio_set_pulls(PIO_TX_PIN, false, false);
+	      gpio_set_dir(PIO_TX_PIN, GPIO_OUT);
+	      gpio_put(PIO_TX_PIN, 0);
+
 	      tx_init = 0;
 	      
 	      // Not selected
@@ -5857,8 +5933,9 @@ int main()
 	      oled_set_xy(&oled0, 0, SEL_Y);
 	      oled_display_string(&oled0, "DESEL   ");
 #endif
+
 	      // Deselect input latch if it was selected
-	      gpio_put(IP_CLK_PIN, 1);
+	      //	      gpio_put(IP_CLK_PIN, 1);
 			  
 	      // SS high, so we are de-selected
 	      set_bus_inputs();
@@ -5902,14 +5979,14 @@ int main()
 #endif
 	    }
 
-#if !MULTICORE_POLLING      
+#if 0
 	  //----------------------------------------------------------------------
 	  // SCLK handling
 	  // The lower address bit is the CLK line
 	  // Falling edge
 	  if( (last_sclk == 1) && (sclk == 0))
 	    {
-#if 0	  
+#if 1
 	      ss_address+=2;
 	      ss_address &= (~1);
 	  
@@ -5922,7 +5999,7 @@ int main()
 	  // Rising edge
 	  if( (last_sclk == 0) && (sclk == 1))
 	    {
-	      //	  ss_address |= 1;
+	      //ss_address |= 1;
 	  
 	      // We now have to present data if we are selected
 	      if( ss == 0 )
