@@ -221,11 +221,11 @@ static inline char uart_wrx_program_getc(PIO pio, uint sm) {
 ; An 8n1 UART transmit program.
 ; OUT pin 0 and side-set pin 0 are both mapped to UART WTX pin.
 
-    pull       side 0 [7]  ; Assert stop bit, or stall with line in idle state
-    set x, 7   side 1 [7]  ; Preload bit counter, assert start bit for 8 clocks
-bitloop:                   ; This loop will run 8 times (8n1 UART)
+    pull       side 1 [7]  ; Assert stop bit, or stall with line in idle state
+    set x, 7   side 0 [7]  ; Preload bit counter, assert start bit for 8 clocks
+bitloopw:                   ; This loop will run 8 times (8n1 UART)
     out pins, 1            ; Shift 1 bit from OSR to the first OUT pin
-    jmp x-- bitloop   [6]  ; Each loop iteration is 8 cycles.
+    jmp x-- bitloopw   [6]  ; Each loop iteration is 8 cycles.
 
 
 % c-sdk {
@@ -264,7 +264,7 @@ static inline void uart_wtx_program_init(PIO pio, uint sm, uint offset, uint pin
 static inline void uart_wtx_program_putc(PIO pio, uint sm, char c) {
   uint32_t c32 = (uint32_t)c;
 
-  c32 ^= 0xffffffff;
+  //c32 ^= 0xffffffff;
   pio_sm_put_blocking(pio, sm, c32);
 }
 

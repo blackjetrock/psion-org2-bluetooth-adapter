@@ -209,8 +209,8 @@ static inline char uart_wrx_program_getc(PIO pio, uint sm) {
 
 static const uint16_t uart_wtx_program_instructions[] = {
             //     .wrap_target
-    0x97a0, //  0: pull   block           side 0 [7] 
-    0xff27, //  1: set    x, 7            side 1 [7] 
+    0x9fa0, //  0: pull   block           side 1 [7] 
+    0xf727, //  1: set    x, 7            side 0 [7] 
     0x6001, //  2: out    pins, 1                    
     0x0642, //  3: jmp    x--, 2                 [6] 
             //     .wrap
@@ -256,7 +256,7 @@ static inline void uart_wtx_program_init(PIO pio, uint sm, uint offset, uint pin
 }
 static inline void uart_wtx_program_putc(PIO pio, uint sm, char c) {
   uint32_t c32 = (uint32_t)c;
-  c32 ^= 0xffffffff;
+  //c32 ^= 0xffffffff;
   pio_sm_put_blocking(pio, sm, c32);
 }
 static inline void uart_wtx_program_puts(PIO pio, uint sm, const char *s) {

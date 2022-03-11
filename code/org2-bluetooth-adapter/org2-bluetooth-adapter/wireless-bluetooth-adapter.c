@@ -228,18 +228,22 @@ void w_uart_puts(char *cmd)
 {
   while( *cmd != '\0' )
     {
-      data_out[data_tx_in_idx] = *(cmd++);
-      data_tx_in_idx = (data_tx_in_idx + 1) % DATA_TX_LEN;
+      w_data_out[data_wtx_in_idx] = *(cmd++);
+      data_wtx_in_idx = (data_wtx_in_idx + 1) % DATA_WTX_LEN;
     }
 }
 
 // This function sends the buffer contents if it can
 void w_uart_tasks(void)
 {
+  // 
   if( data_wtx_out_idx != data_wtx_in_idx )
     {
-      uart_wtx_program_putc(wtx_pio, wtx_sm, data_out[data_wtx_out_idx]);
-      data_wtx_out_idx = (data_wtx_out_idx+1) % DATA_WTX_LEN;
+      if( !pio_sm_is_tx_fifo_full(wrx_pio, wrx_sm) )
+	{
+	  uart_wtx_program_putc(wtx_pio, wtx_sm, w_data_out[data_wtx_out_idx]);
+	  data_wtx_out_idx = (data_wtx_out_idx+1) % DATA_WTX_LEN;
+	}
     }
 }
 
@@ -503,7 +507,7 @@ const I_TASK input_list[] =
    // Wifi
    {ITY_STRING, " AT+CWMODE=2",                                         ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " AT+CIPMUX=1",                                         ifm_null,     ifn_next_is_ok},
-   {ITY_STRING, " AT+CWSAP=\"PsionOrgBA\",\"1234567890\",5,3",          ifm_null,     ifn_next_is_ok},
+   {ITY_STRING, " AT+CWSAP=\"PsionOrgCD\",\"1234567890\",5,3",          ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " AT+CIPSERVER=1,80",                                   ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " AT+CIPCLOSE=%d",                                      ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " %d,CONNECT",                                          ifm_null,     ifn_connect},
@@ -531,7 +535,7 @@ const I_TASK input_list[] =
    // Bluetooth
    {ITY_STRING, " AT+BTINIT=1",                                         ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSPPINIT=2",                                      ifm_null,     ifn_ignore},
-   {ITY_STRING, " AT+BTNAME=\"PsionOrgBA\"",                            ifm_null,     ifn_ignore},
+   {ITY_STRING, " AT+BTNAME=\"PsionOrgCD\"",                            ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSCANMODE=2",                                     ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSECPARAM=3,1,7735",                              ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSPPSTART",                                       ifm_null,     ifn_ignore},
@@ -847,14 +851,18 @@ void ifn_next_is_ok(int i)
   next_str_ok = 1;
 }
 
+int num_ok = 0;
+
 void ifn_check_ok(int i)
 {
   if( next_str_ok )
     {
       // All ok
-
+      num_ok++;
+      
       // remove string we tested for
       remove_n(match_num_scanned);
+
       //remove_string(input_list[i].str);
       next_str_ok = 0;
     }
@@ -864,7 +872,6 @@ void ifn_check_ok(int i)
 
       // remove string we tested for
       remove_n(match_num_scanned);
-
     }
 }
 
@@ -1296,8 +1303,11 @@ void start_task(char *label)
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-// Main task loop for communicating with the WROOM
+// Main loop task for communicating with the WROOM
 //
+// Needs to be in a loop externally
+//
+
 
 void wireless_taskloop(void)
 {
@@ -1333,6 +1343,7 @@ void wireless_taskloop(void)
       // We send data to the Psion using a buffer
       data_out[data_tx_in_idx] = bt_cl_buffer[bt_cl_out];
       bt_cl_out = (bt_cl_out + 1) % BT_CL_BUFFER_SIZE;
+      
       //      tx_char = (tx_char +1) % strlen(tx_msg);
       data_tx_in_idx = (data_tx_in_idx+1) % DATA_TX_LEN;
 
@@ -1486,7 +1497,11 @@ void wireless_taskloop(void)
 	      process_text = 1;
 	      //break;
 	      
-	    default: 
+	    default:
+	      // Store input stream for debug
+	      w_data_in[data_wrx_in_idx++] = ch[0];
+	      data_wrx_in_idx = (data_wrx_in_idx % DATA_WRX_LEN);
+	      
 	      strcat(input_text, ch);
 	      input_text_len++;
 	      break;

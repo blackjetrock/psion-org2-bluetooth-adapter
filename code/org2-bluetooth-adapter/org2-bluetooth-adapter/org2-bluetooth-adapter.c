@@ -137,8 +137,8 @@ typedef void (*CMD_FPTR)(char *cmd);
 BYTE trace[TRACE_LENGTH];
 
 int trace_i = 0;
-#define TRACE(XX) if(trace_i != (TRACE_LENGTH-1)) {trace[trace_i++] = XX; trace_i %= TRACE_LENGTH;}
-//#define TRACE(XX)
+//#define TRACE(XX) if(trace_i != (TRACE_LENGTH-1)) {trace[trace_i++] = XX; trace_i %= TRACE_LENGTH;}
+#define TRACE(XX)
 
 //#define WRITE_TRAP if( (PAK_ADDRESS + data) == 0)  while(1);
 
@@ -5138,14 +5138,15 @@ void handle_address(void)
   TRACE('I');
   TRACE('T');
 
-  while(1)
-    {
+  //  while(1)
+  //{
       // Read GPIO states
       ss     = gpio_get(SLOT_SS_PIN);
       sclk   = gpio_get(SLOT_SCLK_PIN);
       soe    = gpio_get(SLOT_SOE_PIN);
       smr    = gpio_get(SLOT_SMR_PIN);
       spgm   = gpio_get(SLOT_SPGM_PIN);
+
       
       //----------------------------------------------------------------------
       // SCLK handling
@@ -5296,7 +5297,7 @@ void handle_address(void)
       last_smr    = smr;
       last_spgm   = spgm;
 
-    }
+      //}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -5330,6 +5331,17 @@ char w_data_in[DATA_WRX_LEN];
 int data_wtx_in_idx = 0;
 int data_wtx_out_idx = 0;
 char w_data_out[DATA_WTX_LEN];
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+void core1_main(void)
+{
+  while(1)
+    {
+      wireless_taskloop();
+    }
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -5524,7 +5536,7 @@ int main()
 #if 1
   // Start the address handling on the other core
   //  multicore_launch_core1(handle_address);
-   multicore_launch_core1(wireless_taskloop);
+   multicore_launch_core1(core1_main);
 #endif
 
   // Main loop that updates OLED display if using interrupts
@@ -5588,10 +5600,9 @@ int main()
 
   // TX to Wifi module is GPIO4
 #define PIO_W_TX_PIN 4
-#if 1
+
   wrx_offset = pio_add_program(wrx_pio, &uart_wrx_program);
   wtx_offset = pio_add_program(wtx_pio, &uart_wtx_program);
-#endif
 
   // Set up wireless module serial port
   uart_wrx_program_init(wrx_pio, wrx_sm, wrx_offset, PIO_W_RX_PIN, W_SERIAL_BAUD);
@@ -5678,7 +5689,7 @@ int main()
       while(1)
 	{
 	  //wireless_taskloop();
-	  handle_address();
+	  //handle_address();
 	  
 	  ////////////////////////////////////////////////////////////////////////////////
 	  //
@@ -5744,6 +5755,74 @@ int main()
 	  smr    = gpio_get(SLOT_SMR_PIN);
 	  spgm   = gpio_get(SLOT_SPGM_PIN);
 
+
+	  // Handle the address counters
+	  
+      //----------------------------------------------------------------------
+      // SCLK handling
+      // The lower address bit is the CLK line
+      // Falling edge
+      if( (last_sclk == 1) && (sclk == 0))
+	{
+	  // Only increment if the SMR line is low
+	  if( smr == 0 )
+	    {
+	      TRACE('i');
+	      ss_address+=2;
+	      ss_address &= (~1);
+	      
+	      // Wrap address
+	      ss_address &= PAK_MEMORY_SIZE - 1;
+	      
+	      //TRACE(ss_address & 0xFF);
+	      //TRACE((ss_address >> 8) & 0xFF);
+	    }
+	  else
+	    {
+	      // Trace 'clock when SMR high', this is seen in traces
+	      TRACE('z');
+	    }
+	}
+      
+      // Rising edge
+      if( (last_sclk == 0) && (sclk == 1))
+	{
+	  if( smr == 0 )
+	    {
+	      ss_address |= 1;
+	      TRACE('I');
+	      //TRACE(ss_address & 0xFF);
+	      //TRACE((ss_address >> 8) & 0xFF);
+	    }
+	  else
+	    {
+	      TRACE('Z');
+	    }
+	}
+      //--------------------------------------------------------------------------------
+      // Page Counter
+
+      if( (last_spgm == 1) && (spgm == 0) )
+	{
+	  TRACE('P');
+	  ss_page += (1 << 8);
+	  ss_page &= 0x00007F00;
+	}
+      
+      //----------------------------------------------------------------------
+      // SMR handling
+      
+      if( (last_smr == 0) && (smr == 1) )
+	{
+	  TRACE('R');
+	  
+	  ss_address=0;
+	  ss_page = 0;
+	}
+
+
+      ////////////////////////////////////////////////////////////////////////////////
+      
 #if 0
 	  if( soe)
 	    {
@@ -5795,7 +5874,7 @@ int main()
 		  
 		  if( !tx_init )
 		    {
-
+#if PSION_XFER
 		      uart_tx_program_init(tx_pio, tx_sm, tx_offset, PIO_TX_PIN, SERIAL_BAUD);
 
 		      // Drive TX pin
@@ -5805,6 +5884,7 @@ int main()
 		      gpio_put(TRISTATE_TX_PIN, 1);
 #endif
 		      tx_init = 1;
+#endif
 		    }
 		  
 #endif		  
@@ -5838,7 +5918,8 @@ int main()
 	      else
 		{
 
-#if 1		  // Low SOE so this is a read of the ROM, we just use the normal
+#if PSION_XFER
+		  // Low SOE so this is a read of the ROM, we just use the normal
 		  // datapack read code
 		  // We have to make sure the data bus is set up correctly
 
@@ -5914,6 +5995,7 @@ int main()
       
 	  if( (last_ss == 0 ) && (ss == 1) )
 	    {
+#if PSION_XFER
 	      // deselected, so turn off all the link hardware
 	      gpio_init(PIO_RX_PIN);
 
@@ -5933,7 +6015,7 @@ int main()
 	      gpio_put(PIO_TX_PIN, 0);
 
 	      tx_init = 0;
-	      
+#endif	      
 	      // Not selected
 #if USE_OLED
 	      oled_set_xy(&oled0, 0, SEL_Y);
@@ -5947,126 +6029,9 @@ int main()
 	      set_bus_inputs();
 
 	      // No writes on top slot
-#if 0	      
-	      if ( soe )
-		{
-		  int data;
-	      
-		  // High so don't drive the data bus, this is either a write of the
-		  // 128K EPROM segment register or a write
-	      
-		  // Capture data on bus
-		  //	      set_bus_inputs();
-		  data = get_data_bus();
-
-		  if( smr == 1 )
-		    {
-		      // 128K segment write
-		      TRACE('G');
-		      //TRACE(data);
-		    }
-		  else
-		    {
-		      TRACE('w');
-		      //TRACE(data);
-		      //TRACE(ss_address & 0xff);
-		      //TRACE(ss_address >> 8);
-
-#if 0
-#if !READ_ONLY	      
-		      // write to ram
-		      pak_memory[PAK_ADDRESS] = data;
-#endif
-#endif
-
-		      
-		    }
-		}
-#endif
 	    }
 
-#if 0
-	  //----------------------------------------------------------------------
-	  // SCLK handling
-	  // The lower address bit is the CLK line
-	  // Falling edge
-	  if( (last_sclk == 1) && (sclk == 0))
-	    {
-#if 1
-	      ss_address+=2;
-	      ss_address &= (~1);
-	  
-	      // Wrap address
-	      ss_address &= PAK_MEMORY_SIZE - 1;
-#endif
-	    }
 
-      
-	  // Rising edge
-	  if( (last_sclk == 0) && (sclk == 1))
-	    {
-	      //ss_address |= 1;
-	  
-	      // We now have to present data if we are selected
-	      if( ss == 0 )
-		{
-		  // We are selected, look at SOE to see if we should drive the data bus or not
-		  if ( soe )
-		    {
-		      int data;
-		  
-		      // High so don't drive the data bus, this is a write
-		      // Capture data on bus
-		      set_bus_inputs();
-
-		      // We don't write here as SS hasn't gone high and OE hasn't gone high
-		      //data = get_data_bus();
-
-#if !READ_ONLY		  
-		      // write to ram
-		      //pak_memory[PAK_ADDRESS] = data;
-#endif
-		    }
-		  else
-		    {
-		      // Low, so this is a read
-		      // Is it a read of the pak ID?
-		      if( smr && spgm )
-			{
-			  TRACE('*');
-			  
-			  // ID byte
-			  set_bus_outputs();
-			  set_data_bus(PAK_ID_BYTE);
-			}
-		      else
-			{
-			  // Read of pak memory
-			  TRACE('<');
-			  //TRACE(pak_memory[PAK_ADDRESS]);
-			  //TRACE(PAK_ADDRESS & 0xff);
-			  //TRACE(PAK_ADDRESS >> 8);
-
-			  set_bus_outputs();
-			  set_data_bus(pak_memory[PAK_ADDRESS]);
-			}
-		    }
-	      
-		}
-	    }
-
-	  //----------------------------------------------------------------------
-
-
-	  //----------------------------------------------------------------------
-	  // SMR handling
-      
-	  if( (last_smr == 0) && (smr == 1) )
-	    {
-	      ss_address = 0;
-	    }
-
-#endif
 	  // If soe goes high then we have to make bus inputs
 	  // If ss is low as well then it's a write
 	  if( (last_soe == 0) && (soe == 1) )

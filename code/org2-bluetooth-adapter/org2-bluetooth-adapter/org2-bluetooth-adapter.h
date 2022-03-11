@@ -5,7 +5,8 @@
 #define PICOPAK 0
 
 // Bluetooth adapter pinout slightly different
-#define BLUETOOTH_ADAPTER 1
+#define BLUETOOTH_ADAPTER             1
+#define PSION_XFER                    0
 
 // Drop into a loop that displays key states and does nothing else
 #define KEY_DEBUG_ONLY                0
