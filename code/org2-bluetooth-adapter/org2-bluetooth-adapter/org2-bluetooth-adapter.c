@@ -79,6 +79,10 @@ const int SLOT_SD7_PIN  = 15;
 
 const int LS_DIR_PIN    = 27;
 
+#define SERIAL_BAUD 9600
+#define PIO_RX_PIN 12  
+#define PIO_TX_PIN 18
+
 volatile int ss_count = 0;
 volatile int soe_state = 1;
 volatile int ss_address = 0;
@@ -4924,6 +4928,9 @@ inline void set_bus_outputs(void)
 inline void set_bus_inputs(void)
 {
 
+  // Ensure no pull ups or pull downs
+  gpio_set_pulls(PIO_RX_PIN, false, false);
+  
 #if DIRECT_GPIO
   
   // Direct register access to make things faster
@@ -5577,13 +5584,11 @@ int main()
   // Psion
   //
   // We talk to Psion at 9600,n,8,1
-#define SERIAL_BAUD 9600
-  
   // GPIO RX is GPIO12, or SD4  
-#define PIO_RX_PIN 12
+
 
   // TX to Psion is GPIO 18
-#define PIO_TX_PIN 18
+
 #if 1
   rx_offset = pio_add_program(rx_pio, &uart_rx_program);
   tx_offset = pio_add_program(tx_pio, &uart_tx_program);
@@ -5607,6 +5612,13 @@ int main()
   // Set up wireless module serial port
   uart_wrx_program_init(wrx_pio, wrx_sm, wrx_offset, PIO_W_RX_PIN, W_SERIAL_BAUD);
   uart_wtx_program_init(wtx_pio, wtx_sm, wtx_offset, PIO_W_TX_PIN, W_SERIAL_BAUD);
+
+  // The RX PIO state machine should be able to run permanently, we just ignore its
+  // data stream if we aren't enabled
+  
+#if PERMANENT_RX
+  uart_rx_program_init(rx_pio, rx_sm, rx_offset, PIO_RX_PIN, SERIAL_BAUD);
+#endif
   
   ////////////////////////////////////////////////////////////////////////////////
   //
@@ -5840,6 +5852,7 @@ int main()
 	    }
 
 #endif
+	  
 	  //	  if( (last_ss == 1) && (ss == 0) )
 	  if( ss == 0 )
 	    {
@@ -5867,16 +5880,18 @@ int main()
 		  // Set up the state machine we're going to use to receive data from the Psion
 		  if( !rx_init )
 		    {
-
+#if !PERMANENT_RX		      
 		      uart_rx_program_init(rx_pio, rx_sm, rx_offset, PIO_RX_PIN, SERIAL_BAUD);
+#endif
 		      rx_init = 1;
 		    }
 		  
 		  if( !tx_init )
 		    {
 #if PSION_XFER
+#if !TRI_STATE_ONLY		      
 		      uart_tx_program_init(tx_pio, tx_sm, tx_offset, PIO_TX_PIN, SERIAL_BAUD);
-
+#endif
 		      // Drive TX pin
 #if FORCE_TRISTATE_OFF
 		      gpio_put(TRISTATE_TX_PIN, 0);
@@ -5918,20 +5933,23 @@ int main()
 	      else
 		{
 
-#if PSION_XFER
+
+
 		  // Low SOE so this is a read of the ROM, we just use the normal
 		  // datapack read code
 		  // We have to make sure the data bus is set up correctly
-
+#if 0
 		  gpio_init(PIO_RX_PIN);
 		  
 		  gpio_set_pulls(PIO_RX_PIN, false, false);
-		  
+#endif
+#if PSION_XFER		  
 		  rx_init = 0;
 		  
 		  // Don't drive TX pin any more
 		  gpio_put(TRISTATE_TX_PIN, 0);
-		  
+
+#if !TRISTATE_ONLY		  
 		  // Init the GPIO for the TX pin, it will revert to beiung an input
 		  // We turn it into an output and set it low so that the transistor
 		  // used to drive the TX signal does not pull the data line down.
@@ -5939,7 +5957,7 @@ int main()
 		  gpio_init(PIO_TX_PIN);
 		  gpio_set_dir(PIO_TX_PIN, GPIO_OUT);
 		  gpio_put(PIO_TX_PIN, 0);
-		  
+#endif		  
 		  tx_init = 0;
 		  
 #if USE_OLED
@@ -5995,17 +6013,20 @@ int main()
       
 	  if( (last_ss == 0 ) && (ss == 1) )
 	    {
-#if PSION_XFER
 	      // deselected, so turn off all the link hardware
+#if 0
 	      gpio_init(PIO_RX_PIN);
 
 	      gpio_set_pulls(PIO_RX_PIN, false, false);
-
+#endif
+	      
+#if PSION_XFER
 	      rx_init = 0;
 	      
 	      // Don't drive TX pin any more
 	      gpio_put(TRISTATE_TX_PIN, 0);
 
+#if !TRISTATE_ONLY
 	      // Init the GPIO for the TX pin, it will revert to beiung an input
 	      // We turn it into an output and set it low so that the transistor
 	      // used to drive the TX signal does not pull the data line down.
@@ -6013,7 +6034,8 @@ int main()
 	      gpio_init(PIO_TX_PIN);
 	      gpio_set_dir(PIO_TX_PIN, GPIO_OUT);
 	      gpio_put(PIO_TX_PIN, 0);
-
+#endif
+	      
 	      tx_init = 0;
 #endif	      
 	      // Not selected

@@ -265,7 +265,7 @@ Wire Wire Line
 Wire Wire Line
 	2550 4800 2550 5175
 $Comp
-L pak_breakout:ETA6002 U8
+L psion-org2-bluetooth-adapter-rescue:ETA6002-pak_breakout U8
 U 1 1 620E66C4
 P 4975 3500
 F 0 "U8" H 5150 3815 50  0000 C CNN

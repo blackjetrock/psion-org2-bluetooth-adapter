@@ -6,7 +6,9 @@
 
 // Bluetooth adapter pinout slightly different
 #define BLUETOOTH_ADAPTER             1
-#define PSION_XFER                    0
+#define PSION_XFER                    1    // Compile in Psion serial code
+#define TRISTATE_ONLY                 1    // Only drive tristate pin
+#define PERMANENT_RX                  0    // RX hardware always running
 
 // Drop into a loop that displays key states and does nothing else
 #define KEY_DEBUG_ONLY                0
