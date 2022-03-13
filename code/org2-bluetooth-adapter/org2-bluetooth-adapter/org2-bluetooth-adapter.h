@@ -180,3 +180,5 @@ extern char w_data_in[DATA_WRX_LEN];
 extern int data_wtx_in_idx;
 extern int data_wtx_out_idx;
 extern char w_data_out[DATA_WTX_LEN];
+
+extern int bt_link_up;

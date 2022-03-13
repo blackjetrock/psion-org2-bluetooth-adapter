@@ -23,7 +23,8 @@ void remove_n(int n);
 
 void rfn_null(void);
 void rfn_send_done(void);
-
+void rfn_set_link_up(void);
+  
 int ifm_null(int i);
 void ifn_ignore(int i);
 int ifm_ipd(int i);
@@ -42,6 +43,7 @@ void ifn_recv(int i);
 void ifn_closed(int i);
 void ifn_busy(int i);
 void ifn_connect(int i);
+void ifn_disconnect(int i);
 void ifn_btdata(int i);
 void ifn2_btdata(void);
 void ifn_startdisc(int i);
@@ -226,7 +228,7 @@ void on_uart_rx()
 // This function puts something in the buffer
 void w_uart_puts(char *cmd)
 {
-  while( *cmd != '\0' )
+  while( (*cmd) != '\0' )
     {
       w_data_out[data_wtx_in_idx] = *(cmd++);
       data_wtx_in_idx = (data_wtx_in_idx + 1) % DATA_WTX_LEN;
@@ -405,7 +407,7 @@ W_TASK tasklist[] =
    //{WTY_DELAY_MS, "2000"},
    {WTY_PUTS,             "AT+BTSPPSTART\r\n",              rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
-
+   {WTY_FN,               "",                               rfn_set_link_up},
    {WTY_STOP,             "",                               rfn_null},                      // All done
 
    //------------------------------------------------------------------------------
@@ -540,7 +542,7 @@ const I_TASK input_list[] =
    {ITY_STRING, " AT+BTSECPARAM=3,1,7735",                              ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSPPSTART",                                       ifm_null,     ifn_ignore},
    {ITY_STRING, " +BTSPPCONN:%d,\"%x:%x:%x:%x:%x:%x\"",                 ifm_null,     ifn_connect},
-   {ITY_STRING, " +BTSPPDISCONN:%d,\"%x:%x:%x:%x:%x:%x\"",              ifm_null,     ifn_ignore},
+   {ITY_STRING, " +BTSPPDISCONN:%d,\"%x:%x:%x:%x:%x:%x\"",              ifm_null,     ifn_disconnect},
    {ITY_STRING, " +BTDATA:%d,",                                         ifm_null,     ifn_btdata},
    // We can have a busy and then a prompt, so split the strings
    {ITY_FUNC,   " AT+BTSPPSEND=%d,%d\r",                                ifm_null,     ifn_ignore},
@@ -825,6 +827,11 @@ void rfn_send_done(void)
   sending_bt_data = 0;
 }
 
+void rfn_set_link_up(void)
+{
+  //bt_link_up = 1;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 //
 // Input functions
@@ -983,7 +990,12 @@ void ifn_recv(int i)
     }
 }
 
-void ifn_connect(int i)
+void ifn_disconnect(int i)
+{
+  bt_link_up = 0;
+}
+
+  void ifn_connect(int i)
 {
   write_display_extra(1, 'n');
 
@@ -994,6 +1006,9 @@ void ifn_connect(int i)
 
       // Store the connection number
       connection = match_int_arg[0];
+
+      // Signal link is up
+      bt_link_up = 1;
     }
 }
 
@@ -1166,6 +1181,7 @@ void ifn2_btdata(void)
 
 void send_bt_reply(void)
 {
+  //DEBUG_STOP;
   output_text_len = strlen(output_text);
   sprintf(cmd, "AT+BTSPPSEND=0,%d\r\n", output_text_len);
 

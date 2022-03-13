@@ -128,6 +128,7 @@ uint wtx_sm = 1;
 uint wtx_offset;
 
 int wtx_init = 0;
+int bt_link_up = 0;
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -5878,7 +5879,7 @@ int main()
 #if 1
 		  // Set up the PIO UART Tx and Rx
 		  // Set up the state machine we're going to use to receive data from the Psion
-		  if( !rx_init )
+		  if( !rx_init && bt_link_up )
 		    {
 #if !PERMANENT_RX		      
 		      uart_rx_program_init(rx_pio, rx_sm, rx_offset, PIO_RX_PIN, SERIAL_BAUD);
@@ -5932,16 +5933,27 @@ int main()
 		}
 	      else
 		{
-
-
-
 		  // Low SOE so this is a read of the ROM, we just use the normal
 		  // datapack read code
 		  // We have to make sure the data bus is set up correctly
-#if 0
-		  gpio_init(PIO_RX_PIN);
+
+		  // We assume only ROM access so turn TX line off
+		  gpio_put(TRISTATE_TX_PIN, 0);
+
+		  // Then we make the data lines outputs
+		  set_bus_outputs();
+
+		  // And return the ROM data
+		  set_data_bus(pak_memory[PAK_ADDRESS]);
 		  
+#if 0		  
+		  gpio_init(PIO_RX_PIN);
+
 		  gpio_set_pulls(PIO_RX_PIN, false, false);
+
+		  // Set RX pin to input
+		  gpio_set_dir(PIO_TX_PIN, GPIO_OUT);
+		  //#if 0		  
 #endif
 #if PSION_XFER		  
 		  rx_init = 0;
@@ -5950,7 +5962,7 @@ int main()
 		  gpio_put(TRISTATE_TX_PIN, 0);
 
 #if !TRISTATE_ONLY		  
-		  // Init the GPIO for the TX pin, it will revert to beiung an input
+		  // Init the GPIO for the TX pin, it will revert to being an input
 		  // We turn it into an output and set it low so that the transistor
 		  // used to drive the TX signal does not pull the data line down.
 		  // That corrupts the ROM read.
@@ -6014,10 +6026,11 @@ int main()
 	  if( (last_ss == 0 ) && (ss == 1) )
 	    {
 	      // deselected, so turn off all the link hardware
-#if 0
+	      #if 0
 	      gpio_init(PIO_RX_PIN);
 
 	      gpio_set_pulls(PIO_RX_PIN, false, false);
+	      //#if 0
 #endif
 	      
 #if PSION_XFER
