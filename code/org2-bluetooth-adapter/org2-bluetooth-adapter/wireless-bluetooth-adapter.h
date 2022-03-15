@@ -7,8 +7,8 @@
 
 #define WIFI                 0
 #define BLUETOOTH            1     // Enable bluetooth comms
-#define BLUETOOTH_M          0     // Operate BT in master mode
-#define BLUETOOTH_S          1     // Operate BT in slave mode
+#define BLUETOOTH_M          1     // Operate BT in master mode
+#define BLUETOOTH_S          0     // Operate BT in slave mode
 
 typedef enum _BLUETOOTH_MODE
   {

@@ -46,8 +46,8 @@ static inline pio_sm_config uart_rx_program_get_default_config(uint offset) {
 #include "hardware/gpio.h"
 static inline void uart_rx_program_init(PIO pio, uint sm, uint offset, uint pin, uint baud) {
     pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, false);
-    pio_gpio_init(pio, pin);
-    gpio_pull_up(pin);
+    //pio_gpio_init(pio, pin);
+   // gpio_pull_up(pin);
     pio_sm_config c = uart_rx_program_get_default_config(offset);
     sm_config_set_in_pins(&c, pin); // for WAIT, IN
     sm_config_set_jmp_pin(&c, pin); // for JMP

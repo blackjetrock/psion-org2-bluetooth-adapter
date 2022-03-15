@@ -128,6 +128,10 @@ uint wtx_sm = 1;
 uint wtx_offset;
 
 int wtx_init = 0;
+
+// We don't want to send any data to the wifi module before the link is connected. This flag keep track of
+// whether the wifi (tested on BT) link is up or not.
+
 int bt_link_up = 0;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -4930,7 +4934,7 @@ inline void set_bus_inputs(void)
 {
 
   // Ensure no pull ups or pull downs
-  gpio_set_pulls(PIO_RX_PIN, false, false);
+  gpio_set_pulls(PIO_RX_PIN, false, true);
   
 #if DIRECT_GPIO
   
@@ -5662,41 +5666,6 @@ int main()
       oled_display_string(&oled0, "Interrupts");
 #endif
 
-      
-#if 0      
-#if USE_POLLING
-      oled_set_xy(&oled0, 0,14);
-      oled_display_string(&oled0, "Polling");
-#endif
-#endif
-
-#if 0      
-      // Mount and unmount the SD card to set the sd_ok_flag up
-      mount_sd();
-      unmount_sd();
-      
-      oled_set_xy(&oled0, 0,21);
-      if( sd_ok_flag )
-	{
-	  oled_display_string(&oled0, "SD card OK");
-	}
-      else
-	{
-	  oled_display_string(&oled0, "SD card NOT OK");
-	}
-
-      oled_set_xy(&oled0, 0,28);
-#if PICOPAK
-      oled_display_string(&oled0, "Left Button:Menu");
-#else      
-      oled_display_string(&oled0, "Bottom Button:Menu");
-#endif
-      
-      oled_set_xy(&oled0, 0,35);
-      //oled_display_string(&oled0, current_file);
-
-#endif
-
       //      wireless_init();
       
       while(1)
@@ -5880,6 +5849,7 @@ int main()
 		  // Set up the PIO UART Tx and Rx
 		  // Set up the state machine we're going to use to receive data from the Psion
 		  if( !rx_init && bt_link_up )
+		    //if( !rx_init  )
 		    {
 #if !PERMANENT_RX		      
 		      uart_rx_program_init(rx_pio, rx_sm, rx_offset, PIO_RX_PIN, SERIAL_BAUD);
@@ -5945,6 +5915,9 @@ int main()
 
 		  // And return the ROM data
 		  set_data_bus(pak_memory[PAK_ADDRESS]);
+
+		  // The following code is redundant as the RX PIO can run continuously on the
+		  // input. We switch traffic in code from the PIO.
 		  
 #if 0		  
 		  gpio_init(PIO_RX_PIN);
@@ -5953,11 +5926,18 @@ int main()
 
 		  // Set RX pin to input
 		  gpio_set_dir(PIO_TX_PIN, GPIO_OUT);
+		  
 		  //#if 0		  
 #endif
+		  
+
 #if PSION_XFER		  
 		  rx_init = 0;
+
+		  // The following code is redundant as we allow the TX PIO to run, and turn off the
+		  // tristate hardware to isolate it from the Psion.
 		  
+#if 0		  		  
 		  // Don't drive TX pin any more
 		  gpio_put(TRISTATE_TX_PIN, 0);
 
@@ -5969,6 +5949,7 @@ int main()
 		  gpio_init(PIO_TX_PIN);
 		  gpio_set_dir(PIO_TX_PIN, GPIO_OUT);
 		  gpio_put(PIO_TX_PIN, 0);
+#endif
 #endif		  
 		  tx_init = 0;
 		  
@@ -6026,7 +6007,9 @@ int main()
 	  if( (last_ss == 0 ) && (ss == 1) )
 	    {
 	      // deselected, so turn off all the link hardware
-	      #if 0
+	      // We don't do this, we let the RX PIO run and just ignore what is coming from it
+	      
+#if 0
 	      gpio_init(PIO_RX_PIN);
 
 	      gpio_set_pulls(PIO_RX_PIN, false, false);
@@ -6039,14 +6022,18 @@ int main()
 	      // Don't drive TX pin any more
 	      gpio_put(TRISTATE_TX_PIN, 0);
 
+	      // The TX line can stay as an output indefinitely as it has a tristate circuit
+	      
+#if 0	      
 #if !TRISTATE_ONLY
-	      // Init the GPIO for the TX pin, it will revert to beiung an input
+	      // Init the GPIO for the TX pin, it will revert to being an input
 	      // We turn it into an output and set it low so that the transistor
 	      // used to drive the TX signal does not pull the data line down.
 	      // That corrupts the ROM read.
 	      gpio_init(PIO_TX_PIN);
 	      gpio_set_dir(PIO_TX_PIN, GPIO_OUT);
 	      gpio_put(PIO_TX_PIN, 0);
+#endif
 #endif
 	      
 	      tx_init = 0;
@@ -6066,7 +6053,7 @@ int main()
 	      // No writes on top slot
 	    }
 
-
+#if 0
 	  // If soe goes high then we have to make bus inputs
 	  // If ss is low as well then it's a write
 	  if( (last_soe == 0) && (soe == 1) )
@@ -6091,7 +6078,8 @@ int main()
 		    }
 		}
 	    }
-
+#endif
+	  
 	  // Catch-all, force inputs if we are deselected
 	  if( ss )
 	    {

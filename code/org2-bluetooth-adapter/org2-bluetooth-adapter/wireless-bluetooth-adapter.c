@@ -47,6 +47,7 @@ void ifn_disconnect(int i);
 void ifn_btdata(int i);
 void ifn2_btdata(void);
 void ifn_startdisc(int i);
+void ifn_startdisc2(int i);
 
 void ufn_index(void);
 void ufn_memory_0(void);
@@ -83,7 +84,11 @@ typedef struct _BT_DEVICE
 int bt_device_i = 0;
 BT_DEVICE bt_device[NUM_BT_DEVICES];
 
-char *bt_connect_name = "HTC Desire X";
+#define BT_ADDR_SIZE 6
+
+// The bluetooth device we will connect to when in master mode.
+char *bt_connect_name = "PsionOrgCD";
+int bt_connect_addr[BT_ADDR_SIZE];
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -118,6 +123,7 @@ int connection = 0;
 int tasks_run = 0;
 
 typedef void (*BYTE_CONT_FN)(void);
+typedef void (*ON_OK_FN)(void);
 
 char byte_buffer[2000];
 int byte_buffer_index;
@@ -241,7 +247,7 @@ void w_uart_tasks(void)
   // 
   if( data_wtx_out_idx != data_wtx_in_idx )
     {
-      if( !pio_sm_is_tx_fifo_full(wrx_pio, wrx_sm) )
+      if( !pio_sm_is_tx_fifo_full(wtx_pio, wtx_sm) )
 	{
 	  uart_wtx_program_putc(wtx_pio, wtx_sm, w_data_out[data_wtx_out_idx]);
 	  data_wtx_out_idx = (data_wtx_out_idx+1) % DATA_WTX_LEN;
@@ -399,7 +405,7 @@ W_TASK tasklist[] =
    {WTY_DELAY_MS,         "2000",                           rfn_null},
    {WTY_PUTS,             "AT+BTSPPINIT=2\r\n",             rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
-   {WTY_PUTS,             "AT+BTNAME=\"PsionOrgCD\"\r\n",   rfn_null},
+   {WTY_PUTS,             "AT+BTNAME=\"PsionOrgS\"\r\n",   rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
    {WTY_PUTS,             "AT+BTSCANMODE=2\r\n",            rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
@@ -421,7 +427,7 @@ W_TASK tasklist[] =
    {WTY_DELAY_MS,         "2000",                           rfn_null},
    {WTY_PUTS,             "AT+CIPMUX=1\r\n",                rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
-   {WTY_PUTS,             "AT+CWSAP=\"PsionOrgBA\",\"1234567890\",5,3\r\n", rfn_null},
+   {WTY_PUTS,             "AT+CWSAP=\"PsionOrgW\",\"1234567890\",5,3\r\n", rfn_null},
    {WTY_DELAY_MS,         "5000",                           rfn_null},
    {WTY_PUTS,             "AT+CIPSERVER=1,80\r\n",          rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
@@ -509,7 +515,7 @@ const I_TASK input_list[] =
    // Wifi
    {ITY_STRING, " AT+CWMODE=2",                                         ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " AT+CIPMUX=1",                                         ifm_null,     ifn_next_is_ok},
-   {ITY_STRING, " AT+CWSAP=\"PsionOrgCD\",\"1234567890\",5,3",          ifm_null,     ifn_next_is_ok},
+   {ITY_STRING, " AT+CWSAP=\"PsionOrgM\",\"1234567890\",5,3",           ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " AT+CIPSERVER=1,80",                                   ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " AT+CIPCLOSE=%d",                                      ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " %d,CONNECT",                                          ifm_null,     ifn_connect},
@@ -541,6 +547,7 @@ const I_TASK input_list[] =
    {ITY_STRING, " AT+BTSCANMODE=2",                                     ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSECPARAM=3,1,7735",                              ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSPPSTART",                                       ifm_null,     ifn_ignore},
+   {ITY_STRING, " AT+BTSPPCONN=%d,%d,\"%x:%x:%x:%x:%x:%x\"",            ifm_null,     ifn_ignore},
    {ITY_STRING, " +BTSPPCONN:%d,\"%x:%x:%x:%x:%x:%x\"",                 ifm_null,     ifn_connect},
    {ITY_STRING, " +BTSPPDISCONN:%d,\"%x:%x:%x:%x:%x:%x\"",              ifm_null,     ifn_disconnect},
    {ITY_STRING, " +BTDATA:%d,",                                         ifm_null,     ifn_btdata},
@@ -552,6 +559,7 @@ const I_TASK input_list[] =
    {ITY_STRING, " AT+BTSPPINIT=1",                                      ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSTARTDISC=0,10,10",                              ifm_null,     ifn_ignore},
    {ITY_STRING, " +BTSTARTDISC:\"%x:%x:%x:%x:%x:%x\",%[^,],0x%x,0x%x,0x%x,%[0x0-9a-fA-F-]\r",  ifm_null,     ifn_startdisc},
+   {ITY_STRING, " +BTSTARTDISC:\"%x:%x:%x:%x:%x:%x\",%[^,],,,,%[0x0-9a-fA-F-]\r",  ifm_null,     ifn_startdisc2},
   };
    
 #define I_NUM_TASKS (sizeof(input_list) / sizeof(I_TASK) )
@@ -850,6 +858,10 @@ void ifn_null(int i)
 // Set when we want to check that the next string is OK
 int next_str_ok = 0;
 
+// Set when we have a function we want to run on the next OK
+int run_fn_on_next_ok = 0;
+ON_OK_FN ok_fn = NULL;
+
 void ifn_next_is_ok(int i)
 {
   // remove string we tested for
@@ -880,34 +892,50 @@ void ifn_check_ok(int i)
       // remove string we tested for
       remove_n(match_num_scanned);
     }
+
+  // Do we want to run a function?
+  if( run_fn_on_next_ok )
+    {
+      if( ok_fn != NULL )
+	{
+	  (*ok_fn)();
+	}
+      
+      ok_fn = NULL;
+    }
 }
 
 void ifn_ready(int i)
 {
-  setup = 1;
-  
-  oled_set_xy(&oled0, 0, IFN_Y);
-  oled_display_string(&oled0, "Setting up");
 
+  if( !setup,1 )
+    {
+      
+      oled_set_xy(&oled0, 0, IFN_Y);
+      oled_display_string(&oled0, "Setting up");
+      
 #if WIFI  
-  start_task("init");
+      start_task("init");
 #endif
-
+      
 #if BLUETOOTH
-
+      
 #if BLUETOOTH_M
-  start_task("btinitm");
+      start_task("btinitm");
 #endif
-
+      
 #if BLUETOOTH_S
-  start_task("btinit");
+      start_task("btinit");
 #endif
-  
+      
 #endif
-  
-  // Remove the string
-  //remove_string("ready");
-  remove_n(match_num_scanned);
+      
+      // Remove the string
+      //remove_string("ready");
+      remove_n(match_num_scanned);
+      
+      setup = 1;
+    }
 }
 
 void write_display_extra(int y, char ch)
@@ -995,10 +1023,10 @@ void ifn_disconnect(int i)
   bt_link_up = 0;
 }
 
-  void ifn_connect(int i)
+void ifn_connect(int i)
 {
   write_display_extra(1, 'n');
-
+  //DEBUG_STOP;
   if( match(input_text, input_list[i].str))
     {
       // remove the command
@@ -1064,6 +1092,7 @@ void ifn_startdisc(int i)
   //DEBUG_STOP;
   
   if( match(input_text, " +BTSTARTDISC:\"%x:%x:%x:%x:%x:%x\",%[^,],0x%x,0x%x,0x%x,%[0x0-9a-fA-F-]\r") )
+    //if( match(input_text, " +BTSTARTDISC:\"%x:%x:%x:%x:%x:%x\",%[^,],,,,%[0x0-9a-fA-F-]\r") )
     {
       //DEBUG_STOP;
       
@@ -1108,6 +1137,81 @@ void ifn_startdisc(int i)
 #else
 		    uart_puts(UART_ID, cmd);
 #endif
+		}
+
+	      bt_device_i++;
+	    }
+	}
+    }
+}
+
+// Connect to a bluetooth address
+
+void connect_to_device(void)
+{
+  sprintf(cmd, "AT+BTSPPCONN=0,0,\"%02x:%02x:%02x:%02x:%02x:%02x\"\r\n", bt_connect_addr[0], bt_connect_addr[1], bt_connect_addr[2], bt_connect_addr[3], bt_connect_addr[4], bt_connect_addr[5]);
+#if WIFI_UART_PIO
+  w_uart_puts(cmd);
+#else
+  uart_puts(UART_ID, cmd);
+#endif
+}
+
+void ifn_startdisc2(int i)
+{
+  write_display_extra(2, 'd');
+  //DEBUG_STOP;
+  
+  //if( match(input_text, " +BTSTARTDISC:\"%x:%x:%x:%x:%x:%x\",%[^,],0x%x,0x%x,0x%x,%[0x0-9a-fA-F-]\r") )
+  //  if( match(input_text, " +BTSTARTDISC:\"%x:%x:%x:%x:%x:%x\",%[^,],,,,-%d") )
+      if( match(input_text, " +BTSTARTDISC:\"%x:%x:%x:%x:%x:%x\",%[^,],,,,%[0x0-9a-fA-F-]\r") )
+    {
+
+      
+      // remove the command
+      remove_n(match_num_scanned);
+      
+      // Get the data
+      
+      // The device name
+      int known = 0;
+      
+      if( bt_device_i < NUM_BT_DEVICES )
+	{
+	  // If we don't already know about it
+	  for(int i=0; i<bt_device_i; i++)
+	    {
+	      if( strcmp(bt_device[i].name, match_str_arg[0]) == 0 )
+		{
+		  known = 1;
+		  break;
+		}
+	    }
+	  
+	  if( !known )
+	    {
+	      strcpy(bt_device[bt_device_i].name, match_str_arg[0]);
+	      sprintf(bt_device[bt_device_i].id, "%x:%x:%x:%x:%x:%x",
+		      match_int_arg[0],      
+		      match_int_arg[1],      
+		      match_int_arg[2],      
+		      match_int_arg[3],      
+		      match_int_arg[4],      
+			  match_int_arg[5]);
+
+
+	      // If device is the one we want to connect to then do it when we get the next OK
+	      // which is at the end of the discovery command
+	      
+	      if( strcmp(bt_connect_name, match_str_arg[0]) == 0 )
+		{
+		  // Save the connect device address
+		  for(int i=0; i<BT_ADDR_SIZE; i++)
+		    {
+		      bt_connect_addr[i] = match_int_arg[i];
+		    }
+		  ok_fn = connect_to_device;
+		  run_fn_on_next_ok = 1;
 		}
 
 	      bt_device_i++;
