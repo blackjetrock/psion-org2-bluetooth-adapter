@@ -14,6 +14,10 @@
 #define KEY_DEBUG_ONLY                0
 #define TEST_IOPORT                   0
 
+// Is the monitor present?
+#define MONITOR_PRESENT               0
+#define MONITOR_ESC_CHAR              '%'
+
 // Interrupts may muck up the pack interface, but it does seem to run with them enabled.
 // If USB is ever to work then interrupts need to be enabled.
 #define NO_INTERRUPTS_WHILE_POLLING   1

@@ -5331,7 +5331,14 @@ void handle_address(void)
 
 ////////////////////////////////////////////////////////////////////////////////
 //
+// Main function
 //
+// One core sits in a loop servicing the top slot connection. It allows the ROM image
+// to be loaded to the organiser.
+// The other core handles the wireless communictaion using a set of tables that control
+// the AT command communication.
+//
+////////////////////////////////////////////////////////////////////////////////
 
 int main()
 {
@@ -5818,6 +5825,8 @@ int main()
 		    {
 		      // Low, so this is a read
 		      // Is it a read of the pak ID?
+		      // pak ID not supported on top slot.
+		      // The use of spgm here is debatable.
 		      if( smr && spgm )
 			{
 			  TRACE('*');

@@ -73,13 +73,6 @@ void process_bt_term(BYTE *byte_buffer, int num);
 //
 // Discovered devices
 
-typedef struct _BT_DEVICE
-{
-  char name[20];
-  char id[6*3+5];
-} BT_DEVICE;
-
-#define NUM_BT_DEVICES 30
 
 int bt_device_i = 0;
 BT_DEVICE bt_device[NUM_BT_DEVICES];
@@ -543,7 +536,7 @@ const I_TASK input_list[] =
    // Bluetooth
    {ITY_STRING, " AT+BTINIT=1",                                         ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSPPINIT=2",                                      ifm_null,     ifn_ignore},
-   {ITY_STRING, " AT+BTNAME=\"PsionOrgCD\"",                            ifm_null,     ifn_ignore},
+   {ITY_STRING, " AT+BTNAME=\"PsionOrgS\"",                             ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSCANMODE=2",                                     ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSECPARAM=3,1,7735",                              ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSPPSTART",                                       ifm_null,     ifn_ignore},
@@ -1026,7 +1019,8 @@ void ifn_disconnect(int i)
 void ifn_connect(int i)
 {
   write_display_extra(1, 'n');
-  //DEBUG_STOP;
+
+  //  DEBUG_STOP;
   if( match(input_text, input_list[i].str))
     {
       // remove the command
@@ -1422,6 +1416,115 @@ void start_task(char *label)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// 
+// Handle characters coming in to the monitor
+//
+
+void mon_reply(char *s)
+{
+  while(*s != '\0')
+    {
+      data_out[data_tx_in_idx] = *s;
+      data_tx_in_idx = (data_tx_in_idx+1) % DATA_TX_LEN;
+      s++;
+    }
+}
+
+void mon_nl(void)
+{
+  mon_reply("\nHi\n");
+}
+
+void mon_fn_hello(char *cmd)
+{
+  mon_reply("hi\r");
+}
+
+void mon_fn_exit(char *cmd)
+{
+  mon_reply("Exiting...\r");
+  monitor_active = 0;
+}
+
+void mon_fn_btlist(char *cmd)
+{
+  mon_reply("BTLIST\r");
+
+  for(int i = 0; i<bt_device_i; i++)
+    {
+      mon_reply(bt_device[i].name);
+      mon_nl();
+    }
+  mon_nl();
+}
+
+typedef struct
+{
+  char *cmdname;
+  MONITOR_CMD_FN fn;
+} MONCMD;
+
+MONCMD  monitor_command[] =
+    {
+     {"BTLIST", mon_fn_btlist},
+     {"HELLO",  mon_fn_hello},
+     {"EXIT",   mon_fn_exit},
+    };
+
+#define NUM_MON_CMDS (sizeof(monitor_command) / sizeof(MONCMD))
+
+// Where we build commands
+
+char monitor_command_buffer[MONITOR_BUFFER_SIZE];
+
+void process_monitor()
+{
+  char c;
+#if 1
+  if( monitor_sign_on )
+    {
+      mon_reply(">>");
+      monitor_sign_on = 0;
+    }
+#endif
+  
+  // Is there a character to process?
+  if( monitor_buffer_in != monitor_buffer_out )
+    {
+      switch(monitor_buffer[monitor_buffer_out])
+	{
+#if 1	  
+	case '%':
+	  mon_reply(">>");
+	  break;
+#endif	  
+	case 'H':
+	  mon_reply("XYZ");
+	  break;
+	}
+      
+      monitor_buffer_out = (monitor_buffer_out + 1) % MONITOR_BUFFER_SIZE;
+      }
+  
+  return;
+  // If this is a return character then process the command
+  if( c == 13 )
+    {
+      // See if we recognise the command, if so process it
+      for(int i = 0; i< NUM_MON_CMDS; i++)
+	{
+	  if( strncmp(monitor_buffer, monitor_command[i].cmdname, strlen(monitor_command[i].cmdname)) == 0 )
+	    {
+	      (*monitor_command[i].fn)(monitor_buffer);
+
+	      break;
+	    }
+	}
+      monitor_buffer_in = 0;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
 //
 // Main loop task for communicating with the WROOM
 //
@@ -1435,6 +1538,9 @@ void wireless_taskloop(void)
   int c;
   int process_text = 0;
 
+  // Handle the monitor
+  process_monitor();
+  
   // Process serial data coming from and going to the Wifi module
   w_uart_tasks();
   

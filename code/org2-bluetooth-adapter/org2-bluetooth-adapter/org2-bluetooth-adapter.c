@@ -134,12 +134,26 @@ int wtx_init = 0;
 
 int bt_link_up = 0;
 
+// Is the monitor active?
+// If so then the psion serial data is sent to the monitor which replies with text sent back to the Psion
+// The wireless traffic does not occur
+
+int monitor_active = 0;
+
+char monitor_buffer[MONITOR_BUFFER_SIZE];
+
+int monitor_buffer_in  = 0;
+int monitor_buffer_out = 0;
+
+int monitor_sign_on = 0;
+
 ////////////////////////////////////////////////////////////////////////////////
 
 // Memory that emulates a pak
 typedef unsigned char BYTE;
 typedef void (*FPTR)();
 typedef void (*CMD_FPTR)(char *cmd);
+
 
 // The tracing was used for low level analysis of the protocol
 #define TRACE_LENGTH 8192
@@ -4933,8 +4947,10 @@ inline void set_bus_outputs(void)
 inline void set_bus_inputs(void)
 {
 
+#if 0  
   // Ensure no pull ups or pull downs
   gpio_set_pulls(PIO_RX_PIN, false, true);
+#endif
   
 #if DIRECT_GPIO
   
@@ -5355,6 +5371,29 @@ void core1_main(void)
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// Monitor. This shhould run on core1 as we don't want it to disrupt the
+// top slot interface
+//
+
+////////////////////////////////////////////////////////////////////////////////
+
+void monitor_char(char c)
+{
+  // Ignore any non ascii characters
+  if( !( isalnum(c) ) )
+    {
+      return;
+    }
+
+  // Put the character in to the monitor buffer
+  // Core 1 will remove characters and proicess them
+  
+  monitor_buffer[monitor_buffer_in] = c;
+  monitor_buffer_in = (monitor_buffer_in + 1) % MONITOR_BUFFER_SIZE;
+
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -5672,7 +5711,7 @@ int main()
 	{
 	  //wireless_taskloop();
 	  //handle_address();
-	  
+
 	  ////////////////////////////////////////////////////////////////////////////////
 	  //
 	  // Process data coming from and going to the Psion
@@ -5687,9 +5726,28 @@ int main()
 		  // Capture RX serial data from the Psion
 		  char c = uart_rx_program_getc(rx_pio, rx_sm);
 
-		  // Send it to the (bluetooth) comms link
-		  cl_bt_buffer[cl_bt_in] = c;
-		  cl_bt_in = (cl_bt_in + 1) % CL_BT_BUFFER_SIZE;
+#if 0
+		  // Check for the 'escape' sequence which drops us into the monitor
+		  if( c == MONITOR_ESC_CHAR )
+		    {
+		      monitor_active = 1;
+		      monitor_buffer_in = 0;
+		      monitor_sign_on = 1;
+		    }
+
+		  if( monitor_active )
+		    {
+		      monitor_char(c);
+		    }
+		  else
+		      
+#endif
+
+		      // Send it to the (bluetooth) comms link
+		      cl_bt_buffer[cl_bt_in] = c;
+		      cl_bt_in = (cl_bt_in + 1) % CL_BT_BUFFER_SIZE;
+
+		  
 
 #if 0		  
 		  data_in[data_rx_in_idx] = c;
@@ -5697,7 +5755,30 @@ int main()
 #endif
 		}
 	    }
-
+	  else
+	    {
+#if 0
+	      // Check for the 'escape' sequence which drops us into the monitor
+	      if( !pio_sm_is_rx_fifo_empty(rx_pio, rx_sm) )
+		{
+		  // Capture RX serial data from the Psion
+		  char c = uart_rx_program_getc(rx_pio, rx_sm);
+		  
+		  if( c == MONITOR_ESC_CHAR )
+		    {
+		      monitor_active = 1;
+		      monitor_buffer_in = 0;
+		    }
+		  
+		  
+		  if( monitor_active )
+		    {
+		      monitor_char(c);
+		    }
+		}
+#endif
+	    }
+	  
 	  // Are we transmitting to Psion?
 	  if( tx_init )
 	    {
@@ -5823,7 +5904,7 @@ int main()
 
 #endif
 	  
-	  //	  if( (last_ss == 1) && (ss == 0) )
+	  //if( (last_ss == 1) && (ss == 0) )
 	  if( ss == 0 )
 	    {
 #if USE_OLED
@@ -6006,6 +6087,10 @@ int main()
       
 	  if( (last_ss == 0 ) && (ss == 1) )
 	    {
+			  
+	      // SS high, so we are de-selected
+	      set_bus_inputs();
+
 	      // deselected, so turn off all the link hardware
 	      // We don't do this, we let the RX PIO run and just ignore what is coming from it
 	      
@@ -6046,14 +6131,11 @@ int main()
 
 	      // Deselect input latch if it was selected
 	      //	      gpio_put(IP_CLK_PIN, 1);
-			  
-	      // SS high, so we are de-selected
-	      set_bus_inputs();
 
 	      // No writes on top slot
 	    }
 
-#if 0
+#if 1
 	  // If soe goes high then we have to make bus inputs
 	  // If ss is low as well then it's a write
 	  if( (last_soe == 0) && (soe == 1) )

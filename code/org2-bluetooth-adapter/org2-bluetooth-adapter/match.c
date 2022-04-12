@@ -64,6 +64,16 @@ int add_int_arg(int value, char *fmt)
   return(1);
 }
 
+int is_space_char(char c)
+{
+  if( (c <= 0x20) || (c>=0x7f) )
+    {
+      return(1);
+    }
+  
+  return(0);
+}
+
 int match(char *str, char *fmt)
 {
   int si = 0;
@@ -98,9 +108,12 @@ int match(char *str, char *fmt)
       
       switch(fmt[fi])
 	{
+	  // Match whitespace. This is text we aren';t interested in. As we deal with
+	  // only alphanumeric data here, we treat non alpha numeri data as whitespace
 	case ' ':
 	  fi++;
-	  while( isspace(str[si]) )
+	  while( is_space_char(str[si]) )
+	    //  while( !isalnum(str[si]) )
 	    {
 	      si++;
 	      match_num_scanned++;
