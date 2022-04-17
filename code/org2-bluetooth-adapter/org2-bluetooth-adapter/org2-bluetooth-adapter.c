@@ -5377,6 +5377,8 @@ void core1_main(void)
 // top slot interface
 //
 
+int counter = 0;
+
 ////////////////////////////////////////////////////////////////////////////////
 
 void monitor_char(char c)
@@ -5662,6 +5664,7 @@ int main()
   
 #if PERMANENT_RX
   uart_rx_program_init(rx_pio, rx_sm, rx_offset, PIO_RX_PIN, SERIAL_BAUD);
+  counter++;
 #endif
   
   ////////////////////////////////////////////////////////////////////////////////
@@ -5903,6 +5906,8 @@ int main()
 	    }
 
 #endif
+	  // This test should work on an edge, but doesn't for some reason. We get an out of memory
+	  // error on an LZ unless this is a 'ss==0' test. Not sure why.
 	  
 	  //if( (last_ss == 1) && (ss == 0) )
 	  if( ss == 0 )
@@ -6166,6 +6171,8 @@ int main()
 	  if( ss )
 	    {
 	      //	      TRACE('T');
+	      // Don't drive TX pin any more
+	      gpio_put(TRISTATE_TX_PIN, 0);
 	      
 	      set_bus_inputs();
 	    }
