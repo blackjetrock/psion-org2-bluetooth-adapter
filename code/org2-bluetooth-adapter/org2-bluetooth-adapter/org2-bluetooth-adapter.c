@@ -80,6 +80,7 @@ const int SLOT_SD7_PIN  = 15;
 const int LS_DIR_PIN    = 27;
 
 #define SERIAL_BAUD 9600
+//#define SERIAL_BAUD 4800
 #define PIO_RX_PIN 12  
 #define PIO_TX_PIN 18
 
@@ -102,6 +103,10 @@ uint rx_sm = 0;
 uint rx_offset;
 
 int rx_init = 0;
+
+// We need to flush characters if we have just been selected as the RX line is always reading data
+// and when we aren't selected it will be bus traffic not serial IO
+int rx_flush = 0;
 
 // TX PIO parameters
 PIO tx_pio = pio0;
@@ -5645,6 +5650,7 @@ int main()
   //
   
 #define W_SERIAL_BAUD 115200
+  //#define W_SERIAL_BAUD 57600
   
   // GPIO RX is GPIO5
 #define PIO_W_RX_PIN 5
@@ -5666,12 +5672,30 @@ int main()
   uart_rx_program_init(rx_pio, rx_sm, rx_offset, PIO_RX_PIN, SERIAL_BAUD);
   counter++;
 #endif
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // Set system clock and display what clock is set
+  //
+  ////////////////////////////////////////////////////////////////////////////////
   
+  if( set_sys_clock_khz (130000, false) )
+    {
+      oled_set_xy(&oled0, 0, 21);
+      oled_display_string(&oled0, "Overclock failed");
+    }
+  else
+    {
+      oled_set_xy(&oled0, 0, 21);
+      oled_display_string(&oled0, "Overclock OK");
+    }
+    
   ////////////////////////////////////////////////////////////////////////////////
   //
   // Main Loop
   //
   ////////////////////////////////////////////////////////////////////////////////
+
   
   while(1)
     {
@@ -5701,7 +5725,7 @@ int main()
       oled_clear_display(&oled0);
       
       oled_set_xy(&oled0, 0,0);
-      oled_display_string(&oled0, "Bluetooth Adapter X");
+      oled_display_string(&oled0, "Bluetooth Adapter");
       
 #if USE_INTERRUPTS
       oled_set_xy(&oled0, 0,14);
@@ -5724,6 +5748,24 @@ int main()
 	  // Are we receiving from Psion?
 	  if( rx_init )
 	    {
+	      // If the flush flag is set then we flush one character from the input stream.
+	      //This is the character that is clocked in because the data lines were changed
+	      // from output  to input and this looks like a start bit.
+	      if( rx_flush )
+		{
+		  if( !pio_sm_is_rx_fifo_empty(rx_pio, rx_sm) )
+		    {
+		      // Capture RX serial data from the Psion
+		      uart_rx_program_getc(rx_pio, rx_sm);
+
+		      // Only clear flush flag if we flushed one character
+		      rx_flush = 0;
+		    }
+
+		  //		  cl_bt_out = cl_bt_in;		  
+		}
+	      
+		
 	      if( !pio_sm_is_rx_fifo_empty(rx_pio, rx_sm) )
 		{
 		  // Capture RX serial data from the Psion
@@ -5745,12 +5787,9 @@ int main()
 		  else
 		      
 #endif
-
-		      // Send it to the (bluetooth) comms link
-		      cl_bt_buffer[cl_bt_in] = c;
-		      cl_bt_in = (cl_bt_in + 1) % CL_BT_BUFFER_SIZE;
-
-		  
+		    // Send it to the (bluetooth) comms link
+		    cl_bt_buffer[cl_bt_in] = c;
+		  cl_bt_in = (cl_bt_in + 1) % CL_BT_BUFFER_SIZE;
 
 #if 0		  
 		  data_in[data_rx_in_idx] = c;
@@ -5760,6 +5799,13 @@ int main()
 	    }
 	  else
 	    {
+	      // rx_init == 0, so we want to flush any traffic as it is probably
+	      // other data bus activity
+	      if( !pio_sm_is_rx_fifo_empty(rx_pio, rx_sm) )
+		{
+		  // Capture RX serial data from the Psion
+		  uart_rx_program_getc(rx_pio, rx_sm);
+		}
 #if 0
 	      // Check for the 'escape' sequence which drops us into the monitor
 	      if( !pio_sm_is_rx_fifo_empty(rx_pio, rx_sm) )
@@ -5940,7 +5986,13 @@ int main()
 #if !PERMANENT_RX		      
 		      uart_rx_program_init(rx_pio, rx_sm, rx_offset, PIO_RX_PIN, SERIAL_BAUD);
 #endif
+		      // The RX line will have seen a lot of transitions as the code was loaded,
+		      // so flush any received information. This should be OK as we have
+		      // just been selected so it's the start of a new session anyway
+		      cl_bt_out = cl_bt_in;
+
 		      rx_init = 1;
+		      rx_flush = 1;
 		    }
 		  
 		  if( !tx_init )
