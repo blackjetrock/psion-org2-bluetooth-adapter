@@ -80,7 +80,7 @@ BT_DEVICE bt_device[NUM_BT_DEVICES];
 #define BT_ADDR_SIZE 6
 
 // The bluetooth device we will connect to when in master mode.
-char *bt_connect_name = "PsionOrgCD";
+char *bt_connect_name = "Topcon_Default";
 int bt_connect_addr[BT_ADDR_SIZE];
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -398,7 +398,7 @@ W_TASK tasklist[] =
    {WTY_DELAY_MS,         "2000",                           rfn_null},
    {WTY_PUTS,             "AT+BTSPPINIT=2\r\n",             rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
-   {WTY_PUTS,             "AT+BTNAME=\"PsionOrgS\"\r\n",   rfn_null},
+   {WTY_PUTS,             "AT+BTNAME=\"" DEVICE_BT_NAME "\"\r\n",   rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
    {WTY_PUTS,             "AT+BTSCANMODE=2\r\n",            rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
@@ -420,7 +420,7 @@ W_TASK tasklist[] =
    {WTY_DELAY_MS,         "2000",                           rfn_null},
    {WTY_PUTS,             "AT+CIPMUX=1\r\n",                rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
-   {WTY_PUTS,             "AT+CWSAP=\"PsionOrgW\",\"1234567890\",5,3\r\n", rfn_null},
+   {WTY_PUTS,             "AT+CWSAP=\"" DEVICE_WIFI_NAME "\",\"1234567890\",5,3\r\n", rfn_null},
    {WTY_DELAY_MS,         "5000",                           rfn_null},
    {WTY_PUTS,             "AT+CIPSERVER=1,80\r\n",          rfn_null},
    {WTY_DELAY_MS,         "2000",                           rfn_null},
@@ -508,7 +508,7 @@ const I_TASK input_list[] =
    // Wifi
    {ITY_STRING, " AT+CWMODE=2",                                         ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " AT+CIPMUX=1",                                         ifm_null,     ifn_next_is_ok},
-   {ITY_STRING, " AT+CWSAP=\"PsionOrgM\",\"1234567890\",5,3",           ifm_null,     ifn_next_is_ok},
+   {ITY_STRING, " AT+CWSAP=\"" DEVICE_WIFI_NAME "\",\"1234567890\",5,3",           ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " AT+CIPSERVER=1,80",                                   ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " AT+CIPCLOSE=%d",                                      ifm_null,     ifn_next_is_ok},
    {ITY_STRING, " %d,CONNECT",                                          ifm_null,     ifn_connect},
@@ -536,7 +536,7 @@ const I_TASK input_list[] =
    // Bluetooth
    {ITY_STRING, " AT+BTINIT=1",                                         ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSPPINIT=2",                                      ifm_null,     ifn_ignore},
-   {ITY_STRING, " AT+BTNAME=\"PsionOrgS\"",                             ifm_null,     ifn_ignore},
+   {ITY_STRING, " AT+BTNAME=\"" DEVICE_BT_NAME "\"",            ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSCANMODE=2",                                     ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSECPARAM=3,1,7735",                              ifm_null,     ifn_ignore},
    {ITY_STRING, " AT+BTSPPSTART",                                       ifm_null,     ifn_ignore},

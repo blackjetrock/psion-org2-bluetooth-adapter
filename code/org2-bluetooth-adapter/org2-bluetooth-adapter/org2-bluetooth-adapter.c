@@ -5827,7 +5827,7 @@ int main()
 		}
 #endif
 	    }
-	  
+#if 0
 	  // Are we transmitting to Psion?
 	  if( tx_init )
 	    {
@@ -5842,7 +5842,7 @@ int main()
 		    }
 		}
 	    }
-
+#endif
 #if 0
 	  if( tx_counter++ == 300000 )
 	    {
@@ -6228,7 +6228,24 @@ int main()
 	      
 	      set_bus_inputs();
 	    }
-      
+
+#if 1
+	  // Are we transmitting to Psion?
+	  if( tx_init )
+	    {
+	      // If the fifo is not full
+	      if( !pio_sm_is_tx_fifo_full (tx_pio, tx_sm) )
+		{
+		  // If there's something to transmit, send it to the PIO
+		  if( data_tx_out_idx != data_tx_in_idx )
+		    {
+		      uart_tx_program_putc(tx_pio, tx_sm, data_out[data_tx_out_idx]);
+		      data_tx_out_idx = (data_tx_out_idx+1) % DATA_TX_LEN;
+		    }
+		}
+	    }
+#endif
+
 	  last_ss     = ss;
 	  last_sclk   = sclk;
 	  last_soe    = soe;

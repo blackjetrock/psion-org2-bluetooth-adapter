@@ -7,8 +7,22 @@
 
 #define WIFI                 0
 #define BLUETOOTH            1     // Enable bluetooth comms
-#define BLUETOOTH_M          0     // Operate BT in master mode
-#define BLUETOOTH_S          1     // Operate BT in slave mode
+#define BLUETOOTH_M          1     // Operate BT in master mode
+#define BLUETOOTH_S          0     // Operate BT in slave mode
+
+// The device names for Bluetooth
+#define DEVICE_BT_S_NAME     "Topcon_Default"
+#define DEVICE_BT_M_NAME     "Psion_M"
+#define DEVICE_WIFI_NAME     "PsionOrgII"
+
+#if BLUETOOTH_S
+#define DEVICE_BT_NAME       DEVICE_BT_S_NAME
+#endif
+
+#if BLUETOOTH_M
+#define DEVICE_BT_NAME       DEVICE_BT_M_NAME
+#endif
+
 
 typedef enum _BLUETOOTH_MODE
   {
